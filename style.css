@@ -1,0 +1,152 @@
+/*
+Theme Name:     Make-gcdi
+Theme URI:      
+Description:    Make child theme.
+Author:         Me
+Author URI:     
+Template:       make
+Version:        0.1.0
+*/
+
+.header-layout-3 .site-navigation .menu {
+	border-top: 0;
+	border-bottom: 0;
+}
+
+.builder-banner-content h2 {
+  text-align: center;
+}
+
+#featured-projects .builder-text-column {
+  padding: 5px;
+  background-color: white;
+  height: 150px;
+  border-top: 5px solid #55b8e4;
+}
+
+.ttfmake-button {
+  border-radius: 5px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-right: 3px solid #333;
+  border-bottom: 3px solid #333;
+  font-weight: normal !important;
+  background-color: white !important;
+  color: black !important;
+  border-top: 3px solid #55b8e4;
+  border-left: 3px solid #55b8e4;
+  text-align: center;
+  background
+  filter: opacity(85%) !important;
+  display: grid;
+  line-height: 1.1em;
+}
+
+.ttfmake-button .fa {
+  font-size: 1.75em;
+  margin-bottom: 10px;
+}
+
+.ttfmake-button:hover {
+  filter: opacity(100%) !important;
+}
+
+.ttfmp-post-list-item {
+  border-top: 5px solid #55b8e4;
+}
+
+.ttfmp-post-list-item-image {
+  filter: grayscale(100%) contrast(150%) brightness(100%);
+}
+
+.ttfmp-post-list-item-title {
+  border-bottom: 2px solid #e4af32;
+  margin: 0;
+}
+
+.ttfmp-post-list-item-author, .ttfmp-post-list-item-date {
+  text-align: right;
+}
+
+.site-footer {
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+}
+
+.site-footer .widget-area {
+	margin-bottom: 0px;
+}
+
+.site-footer .widget {
+  float: left;
+  padding-right: 5px; 
+  margin-bottom: 0px;
+}
+
+.footer-social-links {
+  float: right;
+  background-color: #b3282e;
+  color: #eee;
+}
+
+.sitewide-footer {
+  display: none;
+}
+
+.gcdi-profiles .builder-text-content {
+  display: grid;
+  
+  margin-bottom: 20px;
+  
+  background-color: #fafafa;
+  
+  grid-template-columns: 150px auto;
+  grid-template-rows: 50px 50px 50px;
+}
+
+.gcdi-profiles .builder-text-content img {
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  max-width: 150px;
+  filter: grayscale(100%) contrast(100%) brightness(100%);
+}
+
+.gcdi-profiles .builder-text-content h4 {
+  background-color: #eee;
+  margin: 0px;
+  padding: 0 5px 0 5px;
+  height: auto;
+}
+
+.gcdi-profiles .builder-text-content h5 {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  
+  font-weight: normal;
+  padding: 0 5px 0 5px;
+}
+
+.gcdi-profiles .builder-text-content ul {
+  grid-column-start: 2;
+  grid-row-start: 3;
+  list-style-type: none;
+  margin: 0px;
+  padding: 5px 5px 5px 5px;
+  background-color: #fafafa;
+  align-items: end;
+
+  
+  grid-column-start: 2;
+  grid-row-start: 3;
+
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  
+  display:flex;
+  flex-direction:   row;
+}
+
+.gcdi-profiles .builder-text-content ul li {
+  padding-right: .5em;
+}
