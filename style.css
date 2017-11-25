@@ -8,9 +8,91 @@ Template:       make
 Version:        0.1.0
 */
 
+/* @import url(//fonts.googleapis.com/css?family=Roboto:regular,italic,700,700italic|Roboto Condensed:regular,700,700italic#038;ver=1.9.8#038;subset=latin)
+
+*/
+
+.site-header-main .container {
+  display: flex;
+  flex-direction: row;
+}
+
+.site-header-main .container .site-branding {
+    order: 1;
+    width: 100%;
+}
+
+.site-header-main .container .site-navigation {
+    order: 2;
+}
+
+.site-header-main .container .search-form {
+    order: 3;
+}
+
+/* Search form */
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-form input.search-field {
+    order: 1;
+    visibility: hidden;
+    background: #ffffff;
+    border: 0;
+    border-bottom: 1px solid #333;
+    padding-left: 5px;
+    color: #000;
+
+    -webkit-transition: width .55s ease;
+    -moz-transition: width .55s ease;
+    -ms-transition: width .55s ease;
+    -o-transition: width .55s ease;
+    transition: width .55s ease;
+}
+
+.search-form .search-submit {
+    display: inherit;
+    width: 2.5em;
+    height: 2.5em;
+    order: 2;
+    background: #dddddd;
+    border: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.search-form:hover .search-submit {
+}
+
+.search-form .fa-search {
+    z-index: 1;
+    color: #000;
+    margin: 0 auto;
+}
+
+.search-form input.search-field:focus, .search-form input.search-field:active{
+    outline:none;
+}
+ 
+.search-form:hover input.search-field {
+    visibility: visible;
+}
+ 
+.search-form:hover .fa-search {
+    color: #000;
+}
+
 .header-layout-3 .site-navigation .menu {
 	border-top: 0;
 	border-bottom: 0;
+}
+
+/* FIXME: This is a workaround due to a WP core issue */
+body {
+    background-color: #ffffff !important;
 }
 
 .builder-banner-content h2 {
