@@ -81,7 +81,7 @@ function gcdi_update_setting_defaults() {
         'font-size-footer-icon'             => array( 'default' => 30 ),
         /* Typography */
         'google-font-url'                   => array( 'default' => '//fonts.googleapis.com/css?family=Roboto%3Aregular%2Citalic%2C700%2C700italic%7CRoboto+Condensed%3Aregular%2Citalic%2C700%2C700italic&subset=latin' ),
-        'font-family-body'                  => array( 'default' => 'Roboto Condensed' ),
+        'font-family-body'                  => array( 'default' => 'Roboto' ),
         'font-family-h1'                    => array( 'default' => 'Roboto Condensed' ),
         'font-family-h2'                    => array( 'default' => 'Roboto Condensed' ),
         'font-family-h3'                    => array( 'default' => 'Roboto Condensed' ),
