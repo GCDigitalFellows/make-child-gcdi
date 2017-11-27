@@ -196,26 +196,27 @@ h1, h2, h3, h4, h5, h6, .site-navigation {
  *
  */
 
-.site-footer {
-    margin: 0;
-    padding: 0;
-    padding-top: 10px;
+.site-footer .container {
+    display: flex;
 }
 
-.site-footer .widget-area {
-    margin-bottom: 0px;
+.footer-1 {
+    display: flex;
+    height: 150px;
 }
 
-.site-footer .widget {
-    float: left;
-    padding-right: 5px; 
-    margin-bottom: 0px;
+.footer-1 .widget img {
+    height: 150px !important;
+    width: 100%;
+}
+
+.footer-1 .widget {
+    padding-left: 10px; 
 }
 
 .footer-social-links {
-    float: right;
-    background-color: #b3282e;
-    color: #eee;
+    color: #29a6dd;
+    height: 100%;
 }
 
 /**
