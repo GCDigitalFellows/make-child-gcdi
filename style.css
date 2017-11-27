@@ -8,9 +8,8 @@ Template:       make
 Version:        0.1.0
 */
 
-/* @import url(//fonts.googleapis.com/css?family=Roboto:regular,italic,700,700italic|Roboto Condensed:regular,700,700italic#038;ver=1.9.8#038;subset=latin)
+@import url(//fonts.googleapis.com/css?family=Roboto:regular,italic,700,700italic|Roboto Condensed:regular,700,700italic#038;ver=1.9.8#038;subset=latin);
 
-*/
 
 .site-header-main .container {
   display: flex;
@@ -28,6 +27,17 @@ Version:        0.1.0
 
 .site-header-main .container .search-form {
     order: 3;
+}
+
+.builder-banner-slide {
+  border-radius: 5px;
+  padding: 0;
+  background-color: white;
+  color: black;
+  border-right: 3px solid #333;
+  border-bottom: 3px solid #333;
+  border-top: 3px solid #29a6dd;
+  border-left: 3px solid #29a6dd;
 }
 
 /* Search form */
@@ -55,13 +65,15 @@ Version:        0.1.0
 
 .search-form .search-submit {
     display: inherit;
+    order: 2;
     width: 2.5em;
     height: 2.5em;
-    order: 2;
-    background: #dddddd;
-    border: 0;
+    background: #ffffff;
+    border-top: 3px solid #29a6dd;
+    border-left: 3px solid #29a6dd;
+    border-bottom: 1px solid #29a6dd;
+    border-right: 1px solid #29a6dd;
     padding: 0;
-    margin: 0 auto;
 }
 
 .search-form:hover .search-submit {
@@ -70,7 +82,7 @@ Version:        0.1.0
 .search-form .fa-search {
     z-index: 1;
     color: #000;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .search-form input.search-field:focus, .search-form input.search-field:active{
@@ -79,10 +91,6 @@ Version:        0.1.0
  
 .search-form:hover input.search-field {
     visibility: visible;
-}
- 
-.search-form:hover .fa-search {
-    color: #000;
 }
 
 .header-layout-3 .site-navigation .menu {
@@ -100,23 +108,22 @@ body {
 }
 
 #featured-projects .builder-text-column {
-  padding: 5px;
-  background-color: white;
   height: 150px;
-  border-top: 5px solid #55b8e4;
 }
 
-.ttfmake-button {
+.gcdi-quicklinks .ttfmake-button {
   border-radius: 5px !important;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
-  border-right: 3px solid #333;
-  border-bottom: 3px solid #333;
-  font-weight: normal !important;
+  font-family: Roboto Condensed;
+  font-weight: bold !important;
+  font-size: 1.2em !important;
   background-color: white !important;
   color: black !important;
-  border-top: 3px solid #55b8e4;
-  border-left: 3px solid #55b8e4;
+  border-top: 2px solid #29a6dd;
+  border-left: 2px solid #29a6dd;
+  border-right: 2px solid #171717;
+  border-bottom: 2px solid #171717;
   text-align: center;
   background
   filter: opacity(85%) !important;
@@ -124,30 +131,41 @@ body {
   line-height: 1.1em;
 }
 
-.ttfmake-button .fa {
+.gcdi-quicklinks .ttfmake-button .fa {
   font-size: 1.75em;
   margin-bottom: 10px;
 }
 
-.ttfmake-button:hover {
+.gcdi-quicklinks .ttfmake-button:hover {
   filter: opacity(100%) !important;
 }
 
 .ttfmp-post-list-item {
-  border-top: 5px solid #55b8e4;
 }
 
 .ttfmp-post-list-item-image {
   filter: grayscale(100%) contrast(150%) brightness(100%);
+  border-radius: 5px;
+  padding: 0;
+  background-color: white;
+  color: black;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  border-top: 3px solid #333;
+  border-left: 3px solid #333;
 }
 
 .ttfmp-post-list-item-title {
   border-bottom: 2px solid #e4af32;
   margin: 0;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .ttfmp-post-list-item-author, .ttfmp-post-list-item-date {
   text-align: right;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .site-footer {
@@ -185,6 +203,8 @@ body {
   
   grid-template-columns: 150px auto;
   grid-template-rows: 50px 50px 50px;
+  border-top: 2px solid #f1d798;
+  border-left: 2px solid #f1d798;
 }
 
 .gcdi-profiles .builder-text-content img {
@@ -195,7 +215,7 @@ body {
 }
 
 .gcdi-profiles .builder-text-content h4 {
-  background-color: #eee;
+  background-color: #f1d798;
   margin: 0px;
   padding: 0 5px 0 5px;
   height: auto;
@@ -232,3 +252,7 @@ body {
 .gcdi-profiles .builder-text-content ul li {
   padding-right: .5em;
 }
+
+/* Hide footer credit for Make theme */
+
+.footer-credit { display: none; }

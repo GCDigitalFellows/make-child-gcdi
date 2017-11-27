@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Make GCDI Child
+ * @package Make GCDI
  */
 /**
  * The GC Digital Initiatives Child Theme of Make
@@ -52,148 +52,77 @@ function make_parent_theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'make_parent_theme_enqueue_styles' );
 
 function gcdi_update_setting_defaults() {
-     $gcdi_defaults = array(
-         // Site Title & Tagline
-         'hide-site-title'                          => 0,
-         'hide-tagline'                             => 1,
-         'color-site-title'                         => '#171717',
-         // General
-         'general-layout'                           => 'boxed',
-         'general-sticky-label'                     => __( 'Featured', 'make' ),
-         // Logo
-         'logo-regular'                             => NULL,
-         'logo-retina'                              => NULL,
-         'logo-favicon'                             => NULL,
-         'logo-apple-touch'                         => NULL,
-         // Background
-         'background_color'                         => '#ffffff',
-         'background_image'                         => '',
-         'background_repeat'                        => 'repeat',
-         'background_position_x'                    => 'left',
-         'background_attachment'                    => 'scroll',
-         'background_size'                          => 'auto',
-         // Colors
-         'color-primary'                            => '#403391',
-         'color-secondary'                          => '#eaecee',
-         'color-text'                               => '#171717',
-         'color-detail'                             => '#b9bcbf',
-         // Layout - Blog
-         'layout-blog-hide-header'                  => 0,
-         'layout-blog-hide-footer'                  => 0,
-         'layout-blog-sidebar-left'                 => 0,
-         'layout-blog-sidebar-right'                => 1,
-         'layout-blog-featured-images'              => 'post-header',
-         'layout-blog-post-date'                    => 'absolute',
-         'layout-blog-post-author'                  => 'avatar',
-         'layout-blog-auto-excerpt'                 => 0,
-         'layout-blog-show-categories'              => 1,
-         'layout-blog-show-tags'                    => 1,
-         'layout-blog-featured-images-alignment'    => 'center',
-         'layout-blog-post-date-location'           => 'top',
-         'layout-blog-post-author-location'         => 'post-footer',
-         'layout-blog-comment-count'                => 'none',
-         'layout-blog-comment-count-location'       => 'before-content',
-         // Layout - Archive
-         'layout-archive-hide-header'               => 0,
-         'layout-archive-hide-footer'               => 0,
-         'layout-archive-sidebar-left'              => 0,
-         'layout-archive-sidebar-right'             => 1,
-         'layout-archive-featured-images'           => 'post-header',
-         'layout-archive-post-date'                 => 'absolute',
-         'layout-archive-post-author'               => 'avatar',
-         'layout-archive-auto-excerpt'              => 0,
-         'layout-archive-show-categories'           => 1,
-         'layout-archive-show-tags'                 => 1,
-         'layout-archive-featured-images-alignment' => 'center',
-         'layout-archive-post-date-location'        => 'top',
-         'layout-archive-post-author-location'      => 'post-footer',
-         'layout-archive-comment-count'             => 'none',
-         'layout-archive-comment-count-location'    => 'before-content',
-         // Layout - Search
-         'layout-search-hide-header'                => 0,
-         'layout-search-hide-footer'                => 0,
-         'layout-search-sidebar-left'               => 0,
-         'layout-search-sidebar-right'              => 1,
-         'layout-search-featured-images'            => 'thumbnail',
-         'layout-search-post-date'                  => 'absolute',
-         'layout-search-post-author'                => 'name',
-         'layout-search-auto-excerpt'               => 1,
-         'layout-search-show-categories'            => 1,
-         'layout-search-show-tags'                  => 1,
-         'layout-search-featured-images-alignment'  => 'center',
-         'layout-search-post-date-location'         => 'top',
-         'layout-search-post-author-location'       => 'post-footer',
-         'layout-search-comment-count'              => 'none',
-         'layout-search-comment-count-location'     => 'before-content',
-         // Layout - Posts
-         'layout-post-hide-header'                  => 0,
-         'layout-post-hide-footer'                  => 0,
-         'layout-post-sidebar-left'                 => 0,
-         'layout-post-sidebar-right'                => 0,
-         'layout-post-featured-images'              => 'post-header',
-         'layout-post-post-date'                    => 'absolute',
-         'layout-post-post-author'                  => 'avatar',
-         'layout-post-show-categories'              => 1,
-         'layout-post-show-tags'                    => 1,
-         'layout-post-featured-images-alignment'    => 'center',
-         'layout-post-post-date-location'           => 'top',
-         'layout-post-post-author-location'         => 'post-footer',
-         'layout-post-comment-count'                => 'none',
-         'layout-post-comment-count-location'       => 'before-content',
-         // Layout - Pages
-         'layout-page-hide-header'                  => 0,
-         'layout-page-hide-footer'                  => 0,
-         'layout-page-sidebar-left'                 => 0,
-         'layout-page-sidebar-right'                => 0,
-         'layout-page-hide-title'                   => 1,
-         'layout-page-featured-images'              => 'none',
-         'layout-page-post-date'                    => 'none',
-         'layout-page-post-author'                  => 'none',
-         'layout-page-featured-images-alignment'    => 'center',
-         'layout-page-post-date-location'           => 'top',
-         'layout-page-post-author-location'         => 'post-footer',
-         'layout-page-comment-count'                => 'none',
-         'layout-page-comment-count-location'       => 'before-content',
-         // Header
-         'header-text-color'                        => '#171717',
-         'header-background-color'                  => '#f5ed08',
-         'header-background-image'                  => '',
-         'header-background-repeat'                 => 'no-repeat',
-         'header-background-position'               => 'center',
-         'header-background-size'                   => 'cover',
-         'header-bar-background-color'              => '#403391',
-         'header-bar-text-color'                    => '#ffffff',
-         'header-bar-border-color'                  => '#ffffff',
-         'header-text'                              => '',
-         'header-show-social'                       => 0,
-         'header-show-search'                       => 1,
-         'header-bar-content-layout'                => 'default',
-         'header-layout'                            => 2,
-         'header-branding-position'                 => 'left',
-         // Main
-         'main-background-color'                    => '#ffffff',
-         'main-background-image'                    => '',
-         'main-background-repeat'                   => 'repeat',
-         'main-background-position'                 => 'left',
-         'main-background-size'                     => 'auto',
-         //'main-content-link-underline'              => 'link-underline-body',
-         // Footer
-         'footer-text-color'                        => '#464849',
-         'footer-border-color'                      => '#b9bcbf',
-         'footer-background-color'                  => '#eaecee',
-         'footer-background-image'                  => NULL,
-         'footer-background-repeat'                 => 'no-repeat',
-         'footer-background-position'               => 'center',
-         'footer-background-size'                   => 'contain'
-     );
+    $gcdi_settings = array (
+		'general-layout'                    => array( 'default' => 'boxed' ),
+		'background_color'                  => array( 'default' => 'ff0000' ),
+        /* Colors  */
+        'color-primary'                     => array( 'default' => '29a6dd' ), // darker tint of 55b8e4
+        'color-secondary'                   => array( 'default' => 'f1d798' ), // tint of #e4af32
+        'color-text'                        => array( 'default' => '171717' ),
+        'color-detail'                      => array( 'default' => 'b3282e' ),
+        /* Blog Layout */
+        'layout-blog-sidebar-right'         => array( 'default' => false ),
+        'layout-blog-post-date-location'    => array( 'default' => 'before-content' ),
+        'layout-blog-post-author'           => array( 'default' => 'name' ),
+        'layout-blog-post-author-location'  => array( 'default' => 'before-content' ),
+        'layout-blog-show-categories'       => array( 'default' => false ),
+        // 'layout-blog-post-show-tags'        => array( 'default' => false ),
+        /* Post Layout */
+        'layout-post-post-date-location'    => array( 'default' => 'before-content' ),
+        'layout-post-post-author'           => array( 'default' => 'name' ),
+        'layout-post-post-author-location'  => array( 'default' => 'before-content' ),
+        'layout-post-show-categories'       => array( 'default' => false ),
+        // 'layout-post-post-show-tags'        => array( 'default' => false ),
+        /* Header */
+		'header-layout'                     => array( 'default' => '3' ),
+        'header-hide-padding-bottom'        => array( 'default' => true ),
+        /* Footer */
+        'footer-widget-areas'               => array( 'default' => '2' ),
+        'font-size-footer-icon'             => array( 'default' => 30 ),
+        /* Typography */
+        'google-font-url'                   => array( 'default' => '//fonts.googleapis.com/css?family=Roboto%3Aregular%2Citalic%2C700%2C700italic%7CRoboto+Condensed%3Aregular%2Citalic%2C700%2C700italic&subset=latin' ),
+		'font-family-body'                  => array( 'default' => 'Roboto' ),
+		'font-family-h1'                    => array( 'default' => 'Roboto Condensed' ),
+		'font-family-h2'                    => array( 'default' => 'Roboto Condensed' ),
+		'font-family-h3'                    => array( 'default' => 'Roboto Condensed' ),
+		'font-family-h4'                    => array( 'default' => 'Roboto Condensed' ),
+		'font-family-h5'                    => array( 'default' => 'Roboto Condensed' ),
+		'font-family-h6'                    => array( 'default' => 'Roboto Condensed' ),
+		'font-family-site-title'            => array( 'default' => 'Roboto Condensed' ),
+		'font-family-nav'                   => array( 'default' => 'Roboto Condensed' ),
+		'font-family-subnav'                => array( 'default' => 'Roboto Condensed' ),
+		'font-family-header-bar-text'       => array( 'default' => 'Roboto Condensed' ),
+		'font-family-widget-title'          => array( 'default' => 'Roboto Condensed' ),
+		'font-family-widget'                => array( 'default' => 'Roboto' ),
+		'font-family-footer-widget-title'   => array( 'default' => 'Roboto Condensed' ),
+		'font-family-footer-widget'         => array( 'default' => 'Roboto' ),
+		'font-family-footer-text'           => array( 'default' => 'Roboto' ),
+        'font-weight-h3'                    => array( 'default' => 'bold' ),
+        'text-transform-h1'                 => array( 'default' => 'none' ),
+        'text-transform-h2'                 => array( 'default' => 'none' ),
+        'text-transform-h3'                 => array( 'default' => 'uppercase' ),
+        'text-transform-h4'                 => array( 'default' => 'none' ),
+        'text-transform-h5'                 => array( 'default' => 'none' ),
+        'text-transform-h6'                 => array( 'default' => 'none' ),
+        // 'line-underline-h3'                 => array( 'default' => 'never' ),
 
-     foreach ($gcdi_defaults as $key => $value) {
-         make_update_thememod_setting_definition(
-             $key, 
-             array(
-                'default' => $value,
-            )
-        );
-     }
+    );
+
+    foreach ($gcdi_settings as $id => $settings) {
+        make_update_thememod_setting_definition( $id, $settings );
+        Make()->thememod()->set_value( $id, $settings["default"] );
+    }
+    Make()->thememod()->set_value( 'font-family-body', 'Roboto' );
 }
 add_action( 'make_settings_thememod_loaded', 'gcdi_update_setting_defaults' );
+
+function childtheme_change_vimeo_icon() {
+	make_update_socialicon_definition(
+		'vimeo.com',
+		array(
+			'class' => array( 'fa', 'fa-fw', 'fa-vimeo-square' ),
+		)
+	);
+}
+
+add_action( 'make_socialicons_loaded', 'childtheme_change_vimeo_icon' );
