@@ -1,24 +1,32 @@
 /*
-Theme Name:     Make-gcdi
-Theme URI:      
+Theme Name:     GCDI
+Theme URI:      https://github.com/GCDigitalFellows/make-child-gcdi
 Description:    Make child theme.
-Author:         Me
-Author URI:     
+Author:         Tahir H. Butt
+Author URI:     tahir.butt@gmail.com
 Template:       make
 Version:        0.1.0
-*/
+ */
+
+/**
+ * Fonts
+ */
 
 @import url(//fonts.googleapis.com/css?family=Roboto:regular,italic,700,700italic|Roboto Condensed:regular,700,700italic#038;ver=1.9.8#038;subset=latin);
 
+/**
+ * Header navigation
+ *
+ * Uses flexbox to layout logo/branding, navigation, and overridden searchform on one line
+ */
 
 .site-header-main .container {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .site-header-main .container .site-branding {
     order: 1;
-    width: 100%;
 }
 
 .site-header-main .container .site-navigation {
@@ -29,32 +37,25 @@ Version:        0.1.0
     order: 3;
 }
 
-.builder-banner-slide {
-  border-radius: 5px;
-  padding: 0;
-  background-color: white;
-  color: black;
-  border-right: 3px solid #333;
-  border-bottom: 3px solid #333;
-  border-top: 3px solid #29a6dd;
-  border-left: 3px solid #29a6dd;
-}
-
-/* Search form */
+/**
+ * Search form
+ *
+ * Search field is hidden until hover action triggered
+ */
 
 .search-form {
     display: flex;
     flex-direction: row;
+    height: 2.5em;
 }
 
 .search-form input.search-field {
     order: 1;
     visibility: hidden;
-    background: #ffffff;
     border: 0;
     border-bottom: 1px solid #333;
-    padding-left: 5px;
-    color: #000;
+    background: #ffffff;
+    color: #171717;
 
     -webkit-transition: width .55s ease;
     -moz-transition: width .55s ease;
@@ -64,11 +65,11 @@ Version:        0.1.0
 }
 
 .search-form .search-submit {
-    display: inherit;
     order: 2;
+    display: inherit; /* by default Make hides button */
     width: 2.5em;
-    height: 2.5em;
     background: #ffffff;
+    color: #171717;
     border-top: 3px solid #29a6dd;
     border-left: 3px solid #29a6dd;
     border-bottom: 1px solid #29a6dd;
@@ -81,178 +82,207 @@ Version:        0.1.0
 
 .search-form .fa-search {
     z-index: 1;
-    color: #000;
     margin: auto;
 }
 
 .search-form input.search-field:focus, .search-form input.search-field:active{
     outline:none;
 }
- 
+
 .search-form:hover input.search-field {
     visibility: visible;
 }
 
 .header-layout-3 .site-navigation .menu {
-	border-top: 0;
-	border-bottom: 0;
+    border-top: 0;
+    border-bottom: 0;
 }
 
-/* FIXME: This is a workaround due to a WP core issue */
-body {
-    background-color: #ffffff !important;
+/**
+ * Landing Page
+ */
+
+.builder-banner-slide {
+    border-radius: 5px;
+    padding: 0;
+    background-color: white;
+    color: black;
+    border-right: 3px solid #333;
+    border-bottom: 3px solid #333;
+    border-top: 3px solid #29a6dd;
+    border-left: 3px solid #29a6dd;
 }
+
 
 .builder-banner-content h2 {
-  text-align: center;
+    text-align: center;
 }
 
-#featured-projects .builder-text-column {
-  height: 150px;
-}
+/**
+ * Landing page: Quicklinks
+ *
+ * Make buttons
+ */
 
 .gcdi-quicklinks .ttfmake-button {
-  border-radius: 5px !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  font-family: Roboto Condensed;
-  font-weight: bold !important;
-  font-size: 1.2em !important;
-  background-color: white !important;
-  color: black !important;
-  border-top: 2px solid #29a6dd;
-  border-left: 2px solid #29a6dd;
-  border-right: 2px solid #171717;
-  border-bottom: 2px solid #171717;
-  text-align: center;
-  background
-  filter: opacity(85%) !important;
-  display: grid;
-  line-height: 1.1em;
+    display: grid;
+    border-radius: 5px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    font-family: Roboto Condensed !important;
+    font-weight: bold !important;
+    font-size: 1.2em !important;
+    background-color: white !important;
+    color: black !important;
+    border-top: 2px solid #29a6dd;
+    border-left: 2px solid #29a6dd;
+    border-right: 2px solid #171717;
+    border-bottom: 2px solid #171717;
+    text-align: center;
+    line-height: 1.1em;
 }
 
 .gcdi-quicklinks .ttfmake-button .fa {
-  font-size: 1.75em;
-  margin-bottom: 10px;
+    font-size: 1.75em;
+    margin-bottom: 10px;
 }
 
 .gcdi-quicklinks .ttfmake-button:hover {
-  filter: opacity(100%) !important;
+    filter: opacity(100%) !important;
 }
+
+/**
+ * Post lists
+ *
+ */
 
 .ttfmp-post-list-item {
 }
 
 .ttfmp-post-list-item-image {
-  filter: grayscale(100%) contrast(150%) brightness(100%);
-  border-radius: 5px;
-  padding: 0;
-  background-color: white;
-  color: black;
-  border-right: 2px solid #333;
-  border-bottom: 2px solid #333;
-  border-top: 3px solid #333;
-  border-left: 3px solid #333;
+    filter: grayscale(100%) contrast(150%) brightness(100%);
+    border-radius: 5px;
+    padding: 0;
+    background-color: white;
+    color: black;
+    border-right: 2px solid #171717;
+    border-bottom: 2px solid #171717;
+    border-top: 3px solid #171717;
+    border-left: 3px solid #171717;
 }
 
 .ttfmp-post-list-item-title {
-  border-bottom: 2px solid #e4af32;
-  margin: 0;
-  padding-left: 5px;
-  padding-right: 5px;
+    border-bottom: 2px solid #e4af32;
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .ttfmp-post-list-item-author, .ttfmp-post-list-item-date {
-  text-align: right;
-  padding-left: 5px;
-  padding-right: 5px;
+    text-align: right;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
+/**
+ * Footer
+ *
+ */
+
 .site-footer {
-  margin: 0;
-  padding: 0;
-  padding-top: 10px;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
 }
 
 .site-footer .widget-area {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .site-footer .widget {
-  float: left;
-  padding-right: 5px; 
-  margin-bottom: 0px;
+    float: left;
+    padding-right: 5px; 
+    margin-bottom: 0px;
 }
 
 .footer-social-links {
-  float: right;
-  background-color: #b3282e;
-  color: #eee;
+    float: right;
+    background-color: #b3282e;
+    color: #eee;
 }
 
-.sitewide-footer {
-  display: none;
-}
+/**
+ * Remove default footers
+ */
 
-.gcdi-profiles .builder-text-content {
-  display: grid;
-  
-  margin-bottom: 20px;
-  
-  background-color: #fafafa;
-  
-  grid-template-columns: 150px auto;
-  grid-template-rows: 50px 50px 50px;
-  border-top: 2px solid #f1d798;
-  border-left: 2px solid #f1d798;
-}
-
-.gcdi-profiles .builder-text-content img {
-  grid-row-start: 1;
-  grid-row-end: span 2;
-  max-width: 150px;
-  filter: grayscale(100%) contrast(100%) brightness(100%);
-}
-
-.gcdi-profiles .builder-text-content h4 {
-  background-color: #f1d798;
-  margin: 0px;
-  padding: 0 5px 0 5px;
-  height: auto;
-}
-
-.gcdi-profiles .builder-text-content h5 {
-  grid-column-start: 2;
-  grid-row-start: 2;
-  
-  font-weight: normal;
-  padding: 0 5px 0 5px;
-}
-
-.gcdi-profiles .builder-text-content ul {
-  grid-column-start: 2;
-  grid-row-start: 3;
-  list-style-type: none;
-  margin: 0px;
-  padding: 5px 5px 5px 5px;
-  background-color: #fafafa;
-  align-items: end;
-
-  
-  grid-column-start: 2;
-  grid-row-start: 3;
-
-  display: -webkit-flex;
-  -webkit-flex-direction: column;
-  
-  display:flex;
-  flex-direction:   row;
-}
-
-.gcdi-profiles .builder-text-content ul li {
-  padding-right: .5em;
-}
+/* Deactivate CAC footer */
+.sitewide-footer { display: none; }
 
 /* Hide footer credit for Make theme */
 
 .footer-credit { display: none; }
+
+
+/**
+ * People page
+ *
+ * Use CSS grids layout
+ */
+
+.gcdi-profiles .builder-text-content {
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-rows: 50px 50px 50px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    border-top: 2px solid #f1d798;
+    border-left: 2px solid #f1d798;
+}
+
+.gcdi-profiles .builder-text-content img {
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    max-width: 150px;
+    filter: grayscale(100%) contrast(100%) brightness(100%);
+}
+
+.gcdi-profiles .builder-text-content h4 {
+    background-color: #eaecee;
+    margin: 0px;
+    padding: 0 5px 0 5px;
+    height: auto;
+}
+
+.gcdi-profiles .builder-text-content h5 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+
+    font-weight: normal;
+    padding: 0 5px 0 5px;
+}
+
+.gcdi-profiles .builder-text-content ul {
+    grid-column-start: 2;
+    grid-row-start: 3;
+    list-style-type: none;
+    margin: 0px;
+    padding: 5px 5px 5px 5px;
+    background-color: #fafafa;
+    align-items: end;
+
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+
+    display:flex;
+    flex-direction: row;
+}
+
+.gcdi-profiles .builder-text-content ul li {
+    padding-right: .5em;
+}
+
+/* FIXME: This is a workaround due to a WP core issue */
+
+body {
+    background-color: #ffffff !important;
+}
