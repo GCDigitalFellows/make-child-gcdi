@@ -31,13 +31,13 @@ define( 'TTFMAKE_CHILD_VERSION', '0.1' );
  * @uses MAKE_Setup_Scripts::update_version()
  */
 function childtheme_style_version() {
-	// Ensure the Make API is available.
-	if ( ! function_exists( 'Make' ) ) {
-		return;
-	}
-	// Version string to append to the child theme's style.css URL.
-	$version = '1.0.0'; // <- Update this!
-	Make()->scripts()->update_version( 'make-main', $version, 'style' );
+    // Ensure the Make API is available.
+    if ( ! function_exists( 'Make' ) ) {
+        return;
+    }
+    // Version string to append to the child theme's style.css URL.
+    $version = '1.0.0'; // <- Update this!
+    Make()->scripts()->update_version( 'make-main', $version, 'style' );
 }
 add_action( 'wp_enqueue_scripts', 'childtheme_style_version', 20 );
 
@@ -53,8 +53,8 @@ add_action( 'wp_enqueue_scripts', 'make_parent_theme_enqueue_styles' );
 
 function gcdi_update_setting_defaults() {
     $gcdi_settings = array (
-		'general-layout'                    => array( 'default' => 'boxed' ),
-		'background_color'                  => array( 'default' => 'ff0000' ),
+        'general-layout'                    => array( 'default' => 'boxed' ),
+        'background_color'                  => array( 'default' => 'ff0000' ),
         /* Colors  */
         'color-primary'                     => array( 'default' => '29a6dd' ), // darker tint of 55b8e4
         'color-secondary'                   => array( 'default' => 'f1d798' ), // tint of #e4af32
@@ -74,29 +74,29 @@ function gcdi_update_setting_defaults() {
         'layout-post-show-categories'       => array( 'default' => false ),
         // 'layout-post-post-show-tags'        => array( 'default' => false ),
         /* Header */
-		'header-layout'                     => array( 'default' => '3' ),
+        'header-layout'                     => array( 'default' => '3' ),
         'header-hide-padding-bottom'        => array( 'default' => true ),
         /* Footer */
         'footer-widget-areas'               => array( 'default' => '2' ),
         'font-size-footer-icon'             => array( 'default' => 30 ),
         /* Typography */
         'google-font-url'                   => array( 'default' => '//fonts.googleapis.com/css?family=Roboto%3Aregular%2Citalic%2C700%2C700italic%7CRoboto+Condensed%3Aregular%2Citalic%2C700%2C700italic&subset=latin' ),
-		'font-family-body'                  => array( 'default' => 'Roboto' ),
-		'font-family-h1'                    => array( 'default' => 'Roboto Condensed' ),
-		'font-family-h2'                    => array( 'default' => 'Roboto Condensed' ),
-		'font-family-h3'                    => array( 'default' => 'Roboto Condensed' ),
-		'font-family-h4'                    => array( 'default' => 'Roboto Condensed' ),
-		'font-family-h5'                    => array( 'default' => 'Roboto Condensed' ),
-		'font-family-h6'                    => array( 'default' => 'Roboto Condensed' ),
-		'font-family-site-title'            => array( 'default' => 'Roboto Condensed' ),
-		'font-family-nav'                   => array( 'default' => 'Roboto Condensed' ),
-		'font-family-subnav'                => array( 'default' => 'Roboto Condensed' ),
-		'font-family-header-bar-text'       => array( 'default' => 'Roboto Condensed' ),
-		'font-family-widget-title'          => array( 'default' => 'Roboto Condensed' ),
-		'font-family-widget'                => array( 'default' => 'Roboto' ),
-		'font-family-footer-widget-title'   => array( 'default' => 'Roboto Condensed' ),
-		'font-family-footer-widget'         => array( 'default' => 'Roboto' ),
-		'font-family-footer-text'           => array( 'default' => 'Roboto' ),
+        'font-family-body'                  => array( 'default' => 'Roboto Condensed' ),
+        'font-family-h1'                    => array( 'default' => 'Roboto Condensed' ),
+        'font-family-h2'                    => array( 'default' => 'Roboto Condensed' ),
+        'font-family-h3'                    => array( 'default' => 'Roboto Condensed' ),
+        'font-family-h4'                    => array( 'default' => 'Roboto Condensed' ),
+        'font-family-h5'                    => array( 'default' => 'Roboto Condensed' ),
+        'font-family-h6'                    => array( 'default' => 'Roboto Condensed' ),
+        'font-family-site-title'            => array( 'default' => 'Roboto Condensed' ),
+        'font-family-nav'                   => array( 'default' => 'Roboto Condensed' ),
+        'font-family-subnav'                => array( 'default' => 'Roboto Condensed' ),
+        'font-family-header-bar-text'       => array( 'default' => 'Roboto Condensed' ),
+        'font-family-widget-title'          => array( 'default' => 'Roboto Condensed' ),
+        'font-family-widget'                => array( 'default' => 'Roboto' ),
+        'font-family-footer-widget-title'   => array( 'default' => 'Roboto Condensed' ),
+        'font-family-footer-widget'         => array( 'default' => 'Roboto' ),
+        'font-family-footer-text'           => array( 'default' => 'Roboto' ),
         'font-weight-h3'                    => array( 'default' => 'bold' ),
         'text-transform-h1'                 => array( 'default' => 'none' ),
         'text-transform-h2'                 => array( 'default' => 'none' ),
@@ -112,17 +112,5 @@ function gcdi_update_setting_defaults() {
         make_update_thememod_setting_definition( $id, $settings );
         Make()->thememod()->set_value( $id, $settings["default"] );
     }
-    Make()->thememod()->set_value( 'font-family-body', 'Roboto' );
 }
 add_action( 'make_settings_thememod_loaded', 'gcdi_update_setting_defaults' );
-
-function childtheme_change_vimeo_icon() {
-	make_update_socialicon_definition(
-		'vimeo.com',
-		array(
-			'class' => array( 'fa', 'fa-fw', 'fa-vimeo-square' ),
-		)
-	);
-}
-
-add_action( 'make_socialicons_loaded', 'childtheme_change_vimeo_icon' );
