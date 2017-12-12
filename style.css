@@ -16,7 +16,7 @@ body {
     font-family: 'Roboto';
 }
 
-h1, h2, h3, h4, h5, h6, .site-navigation {
+h1, h2, h3, h4, h5, h6, .site-navigation, .header-bar {
     font-family: 'Roboto Condensed' !important;
 }
 
@@ -25,6 +25,11 @@ h1, h2, h3, h4, h5, h6, .site-navigation {
  *
  * Uses flexbox to layout logo/branding, navigation, and overridden searchform on one line
  */
+
+.header-bar {
+    background-color: #fff;
+    color: #171717;
+}
 
 .site-header-main .container {
     display: flex;
@@ -53,14 +58,12 @@ h1, h2, h3, h4, h5, h6, .site-navigation {
 .search-form {
     display: flex;
     flex-direction: row;
-    height: 2.5em;
 }
 
 .search-form input.search-field {
     order: 1;
-    visibility: hidden;
     border: 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #29a6dd;
     background: #ffffff;
     color: #171717;
 
@@ -84,8 +87,10 @@ h1, h2, h3, h4, h5, h6, .site-navigation {
     padding: 0;
 }
 
+/*
 .search-form:hover .search-submit {
 }
+*/
 
 .search-form .fa-search {
     z-index: 1;
@@ -96,9 +101,11 @@ h1, h2, h3, h4, h5, h6, .site-navigation {
     outline:none;
 }
 
+/*
 .search-form:hover input.search-field {
     visibility: visible;
 }
+*/
 
 .header-layout-3 .site-navigation .menu {
     border-top: 0;

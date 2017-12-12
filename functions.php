@@ -55,6 +55,8 @@ function gcdi_update_setting_defaults() {
     $gcdi_settings = array (
         'general-layout'                    => array( 'default' => 'boxed' ),
         'background_color'                  => array( 'default' => 'ff0000' ),
+	'hide-site-title'                   => array( 'default' => true ),
+	'hide-tagline'                      => array( 'default' => false ),
         /* Colors  */
         'color-primary'                     => array( 'default' => '29a6dd' ), // darker tint of 55b8e4
         'color-secondary'                   => array( 'default' => 'f1d798' ), // tint of #e4af32
@@ -74,7 +76,7 @@ function gcdi_update_setting_defaults() {
         'layout-post-show-categories'       => array( 'default' => false ),
         // 'layout-post-post-show-tags'        => array( 'default' => false ),
         /* Header */
-        'header-layout'                     => array( 'default' => '3' ),
+        'header-layout'                     => array( 'default' => '1' ),
         'header-hide-padding-bottom'        => array( 'default' => true ),
         /* Footer */
         'footer-widget-areas'               => array( 'default' => '2' ),
