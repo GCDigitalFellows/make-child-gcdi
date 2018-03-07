@@ -7,6 +7,7 @@
 $subheader_class = ( make_get_thememod_value( 'header-show-social' ) ) ? ' right-content' : '';
 $mobile_menu = make_get_thememod_value( 'mobile-menu' );
 $header_menu_container_class = 'header-bar-menu' . ( 'header-bar' === $mobile_menu ? ' mobile-menu': ' desktop-menu' );
+$logo_favicon = make_get_thememod_value( 'logo-favicon' );
 
 $header_bar_menu = wp_nav_menu( array(
 	'theme_location'  => 'header-bar',
@@ -64,15 +65,13 @@ set_query_var( 'header_bar_menu', $header_bar_menu );
 				</span>
 				<?php endif; ?>
 			</div>
-            
-            <?php get_template_part( 'partials/nav', 'header-main' ); ?>
 
 			<?php // Search form
-            if ( make_get_thememod_value( 'header-show-search' ) ) : ?>
-			    <?php
+			if ( make_get_thememod_value( 'header-show-search' ) ) :
 				get_search_form();
 			endif; ?>
 
+			<?php get_template_part( 'partials/nav', 'header-main' ); ?>
 		</div>
 	</div>
 </header>

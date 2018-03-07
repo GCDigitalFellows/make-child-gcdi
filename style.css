@@ -16,8 +16,12 @@ body {
     font-family: 'Roboto';
 }
 
-h1, h2, h3, h4, h5, h6, .site-navigation, .header-bar {
-    font-family: 'Roboto Condensed' !important;
+h1, h2 {
+    font-family: 'Roboto Slab';
+}
+
+h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
+    font-family: 'Roboto Condensed';
 }
 
 /**
@@ -31,23 +35,39 @@ h1, h2, h3, h4, h5, h6, .site-navigation, .header-bar {
     color: #171717;
 }
 
-.site-header-main .container {
-    display: flex;
-    flex-direction: row;
+/* Header bar should include landing page as first link that should be styled */
+
+ul#menu-top-navigation-menu > li > a {
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 1.2;
 }
 
-.site-header-main .container .site-branding {
-    order: 1;
-    width: 100%;
+ul#menu-top-navigation-menu > li:first-child > a {
+    font-size: 24px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
-.site-header-main .container .site-navigation {
-    order: 2;
-}
+/* .site-header-main .container { */
+/*     display: flex; */
+/*     flex-direction: row; */
+/* } */
 
-.site-header-main .container .search-form {
-    order: 3;
-}
+/* .site-header-main .container .site-branding { */
+/*     order: 1; */
+/*     width: 100%; */
+/* } */
+
+/* .site-header-main .container .site-navigation { */
+/*     order: 2; */
+/* } */
+
+/* .site-header-main .container .search-form { */
+/*     order: 3; */
+/* } */
 
 /**
  * Search form
@@ -130,6 +150,10 @@ h1, h2, h3, h4, h5, h6, .site-navigation, .header-bar {
 
 .builder-banner-content h2 {
     text-align: center;
+    font-size: 46px;
+    font-size: 4.6rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 /**
@@ -137,6 +161,15 @@ h1, h2, h3, h4, h5, h6, .site-navigation, .header-bar {
  *
  * Make buttons
  */
+
+.gcdi-quicklinks div.builder_text_row {
+    display: flex;
+}
+
+.gcdi-quicklinks div.builder-text-column {
+    flex: 1;
+    padding: 1em;
+}
 
 .gcdi-quicklinks .ttfmake-button {
     display: grid;
@@ -257,9 +290,10 @@ h1, h2, h3, h4, h5, h6, .site-navigation, .header-bar {
     grid-template-columns: 150px auto;
     grid-template-rows: 50px 50px 50px;
     margin-bottom: 20px;
-    background-color: #fafafa;
-    border-top: 2px solid #f1d798;
-    border-left: 2px solid #f1d798;
+    background-color: #fff;
+    border-top: 2px solid #e4af32;
+    border-left: 2px solid #e4af32;
+    border-radius: 3px;
 }
 
 .gcdi-profiles .builder-text-content p {
@@ -272,7 +306,7 @@ h1, h2, h3, h4, h5, h6, .site-navigation, .header-bar {
 .gcdi-profiles .builder-text-content h4 {
     grid-column-start: 2;
     grid-row-start: 1;
-    background-color: #eaecee;
+    background-color: #f2f3f4;
     text-align: right;
     margin: 0px;
     padding: 0 5px 0 5px;
@@ -293,7 +327,7 @@ h1, h2, h3, h4, h5, h6, .site-navigation, .header-bar {
     font-size: 1.2em;
     margin: 0px;
     padding: 5px 5px 5px 5px;
-    background-color: #fafafa;
+    background-color: #fff;
     align-items: end;
 
     display: -webkit-flex;
@@ -306,6 +340,61 @@ h1, h2, h3, h4, h5, h6, .site-navigation, .header-bar {
 .gcdi-profiles .builder-text-content ul li {
     padding-right: .5em;
 }
+
+/**
+ * Resources page
+ *
+ */
+
+.ttfmp-panels-item-title {
+	margin-bottom: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-weight: normal;
+    font-family: 'Roboto Condensed';
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.builder-section-panels .ui-state-default,
+.builder-section-panels .ui-widget-content .ui-state-default,
+.builder-section-panels .ui-widget-header .ui-state-default {
+    border: 0;
+	color: #171717;
+    border-bottom: 2px solid #e4af32;
+	background: #f2f3f4;
+}
+
+.builder-section-panels .ui-state-default a,
+.builder-section-panels .ui-state-default a:link,
+.builder-section-panels .ui-state-default a:visited {
+	border: 0;
+	color: #171717;
+	text-decoration: none;
+}
+
+.builder-section-panels .ui-state-hover,
+.builder-section-panels .ui-widget-content .ui-state-hover,
+.builder-section-panels .ui-widget-header .ui-state-hover,
+.builder-section-panels .ui-state-focus,
+.builder-section-panels .ui-widget-content .ui-state-focus,
+.builder-section-panels .ui-widget-header .ui-state-focus {
+	border: 1px solid #;
+	color: #f2f3f4;
+	background: #29a6dd;
+}
+
+.builder-section-panels .ui-state-active a,
+.builder-section-panels .ui-state-active a:link,
+.builder-section-panels .ui-state-active a:visited {
+	border: 0;
+	color: #171717;
+	text-decoration: none;
+}
+
 
 /* FIXME: This is a workaround due to a WP core issue */
 

@@ -55,8 +55,8 @@ function gcdi_update_setting_defaults() {
     $gcdi_settings = array (
         'general-layout'                    => array( 'default' => 'boxed' ),
         'background_color'                  => array( 'default' => 'ff0000' ),
-	'hide-site-title'                   => array( 'default' => true ),
-	'hide-tagline'                      => array( 'default' => false ),
+        'hide-site-title'                   => array( 'default' => true ),
+        'hide-tagline'                      => array( 'default' => false ),
         /* Colors  */
         'color-primary'                     => array( 'default' => '29a6dd' ), // darker tint of 55b8e4
         'color-secondary'                   => array( 'default' => 'f1d798' ), // tint of #e4af32
@@ -76,16 +76,16 @@ function gcdi_update_setting_defaults() {
         'layout-post-show-categories'       => array( 'default' => false ),
         // 'layout-post-post-show-tags'        => array( 'default' => false ),
         /* Header */
-        'header-layout'                     => array( 'default' => '1' ),
+        'header-layout'                     => array( 'default' => '2' ),
         'header-hide-padding-bottom'        => array( 'default' => true ),
         /* Footer */
         'footer-widget-areas'               => array( 'default' => '2' ),
         'font-size-footer-icon'             => array( 'default' => 30 ),
         /* Typography */
-        'google-font-url'                   => array( 'default' => '//fonts.googleapis.com/css?family=Roboto%3Aregular%2Citalic%2C700%2C700italic%7CRoboto+Condensed%3Aregular%2Citalic%2C700%2C700italic&subset=latin' ),
+        'google-font-url'                   => array( 'default' => '//fonts.googleapis.com/css?family=Roboto%3Aregular%2Citalic%2C700%2C700italic%7CRoboto+Condensed%3Aregular%2Citalic%2C700%2C700italic%7CRoboto+Slab%3Aregular%2C700&subset=latin' ),
         'font-family-body'                  => array( 'default' => 'Roboto' ),
-        'font-family-h1'                    => array( 'default' => 'Roboto Condensed' ),
-        'font-family-h2'                    => array( 'default' => 'Roboto Condensed' ),
+        'font-family-h1'                    => array( 'default' => 'Roboto Slab' ),
+        'font-family-h2'                    => array( 'default' => 'Roboto Slab' ),
         'font-family-h3'                    => array( 'default' => 'Roboto Condensed' ),
         'font-family-h4'                    => array( 'default' => 'Roboto Condensed' ),
         'font-family-h5'                    => array( 'default' => 'Roboto Condensed' ),
@@ -107,7 +107,6 @@ function gcdi_update_setting_defaults() {
         'text-transform-h5'                 => array( 'default' => 'none' ),
         'text-transform-h6'                 => array( 'default' => 'none' ),
         // 'line-underline-h3'                 => array( 'default' => 'never' ),
-
     );
 
     foreach ($gcdi_settings as $id => $settings) {
