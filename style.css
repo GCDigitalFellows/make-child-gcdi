@@ -8,20 +8,22 @@ Template:       make
 Version:        0.1.0
  */
 
+@import url("ibm-plex.css");
+
 /**
  * Fonts
  */
 
 body {
-    font-family: 'Roboto';
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
-h1, h2 {
-    font-family: 'Roboto Slab';
+h1 {
+    font-family: 'IBM Plex Serif', 'Georgia', Times, serif;
 }
 
-h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
-    font-family: 'Roboto Condensed';
+h2, h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
+    font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /**
@@ -147,14 +149,13 @@ ul#menu-top-navigation-menu > li:first-child > a {
     border-left: 3px solid #29a6dd;
 }
 
-
-.builder-banner-content h2 {
-    text-align: center;
-    font-size: 46px;
-    font-size: 4.6rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
+/* .builder-banner-content h1 { */
+/*     text-align: center; */
+/*     font-size: 46px; */
+/*     font-size: 4.6rem; */
+/*     font-weight: 700; */
+/*     line-height: 1.2; */
+/* } */
 
 /**
  * Landing page: Quicklinks
@@ -207,7 +208,7 @@ ul#menu-top-navigation-menu > li:first-child > a {
 }
 
 .ttfmp-post-list-item-image {
-    filter: grayscale(100%) contrast(150%) brightness(100%);
+    filter: grayscale(100%) contrast(120%) brightness(100%);
     border-radius: 5px;
     padding: 0;
     background-color: white;
@@ -300,7 +301,7 @@ ul#menu-top-navigation-menu > li:first-child > a {
     grid-row-start: 1;
     grid-row-end: span 3;
     max-width: 150px;
-    filter: grayscale(100%) contrast(100%) brightness(100%);
+    filter: grayscale(100%) contrast(115%) brightness(100%);
 }
 
 .gcdi-profiles .builder-text-content h4 {
