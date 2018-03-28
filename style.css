@@ -318,6 +318,7 @@ ul#menu-top-navigation-menu > li:first-child > a {
     grid-row-start: 2;
     text-align: right;
     padding: 0 5px 0 5px;
+    margin-left: auto;
 }
 
 .gcdi-profiles .builder-text-content ul {
@@ -325,11 +326,12 @@ ul#menu-top-navigation-menu > li:first-child > a {
     grid-row-start: 3;
     text-align: right;
     list-style-type: none;
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin: 0px;
     padding: 5px 5px 5px 5px;
     background-color: #fff;
     align-items: end;
+    margin-left: auto;
 
     display: -webkit-flex;
     -webkit-flex-direction: column;
