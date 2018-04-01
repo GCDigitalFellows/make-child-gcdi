@@ -344,6 +344,11 @@ ul#menu-top-navigation-menu > li:first-child > a {
     padding-right: .5em;
 }
 
+.fa-cac {
+    height: 1em; 
+    vertical-align: bottom;
+}
+
 /**
  * Resources page
  *
