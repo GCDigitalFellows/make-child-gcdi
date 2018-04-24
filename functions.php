@@ -76,7 +76,7 @@ function gcdi_update_setting_defaults() {
         'layout-post-show-categories'       => array( 'default' => false ),
         // 'layout-post-post-show-tags'        => array( 'default' => false ),
         /* Header */
-        'header-layout'                     => array( 'default' => '2' ),
+        'header-layout'                     => array( 'default' => '1' ),
         'header-hide-padding-bottom'        => array( 'default' => true ),
         /* Footer */
         'footer-widget-areas'               => array( 'default' => '2' ),
@@ -114,4 +114,15 @@ function gcdi_update_setting_defaults() {
         Make()->thememod()->set_value( $id, $settings["default"] );
     }
 }
-add_action( 'make_settings_thememod_loaded', 'gcdi_update_setting_defaults' );
+
+function childtheme_change_cac_icon() {
+	make_update_socialicon_definition(
+		'commons.gc.cuny.edu',
+		array(
+			'title' => _x( 'CUNY Academic Commons', 'CAC', 'make-child' ),
+			'class' => array( 'fa', 'fa-cac-icon' ),
+		)
+	);
+}
+
+add_action( 'make_socialicons_loaded', 'childtheme_change_cac_icon' );

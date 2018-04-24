@@ -53,24 +53,6 @@ ul#menu-top-navigation-menu > li:first-child > a {
     line-height: 1.2;
 }
 
-/* .site-header-main .container { */
-/*     display: flex; */
-/*     flex-direction: row; */
-/* } */
-
-/* .site-header-main .container .site-branding { */
-/*     order: 1; */
-/*     width: 100%; */
-/* } */
-
-/* .site-header-main .container .site-navigation { */
-/*     order: 2; */
-/* } */
-
-/* .site-header-main .container .search-form { */
-/*     order: 3; */
-/* } */
-
 /**
  * Search form
  *
@@ -349,6 +331,19 @@ ul#menu-top-navigation-menu > li:first-child > a {
     vertical-align: bottom;
 }
 
+.fa-cac-icon:before {
+    content: "";
+    background-image: url('/wp-content/themes/make-child-gcdi/images/cac-logo.png');
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background-size: 1em 1em; 
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+}
+
 /**
  * Resources page
  *
@@ -359,8 +354,6 @@ ul#menu-top-navigation-menu > li:first-child > a {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	font-weight: normal;
-    font-family: 'Roboto Condensed';
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
