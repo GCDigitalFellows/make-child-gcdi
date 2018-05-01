@@ -4,11 +4,9 @@
  */
 
 // Header Options
-$subheader_class = ( make_get_thememod_value( 'header-show-social' ) ) ? ' right-content' : '';
+$subheader_class = ( make_get_thememod_value( 'header-show-social' ) || make_get_thememod_value( 'header-show-search' ) ) ? ' right-content' : '';
 $mobile_menu = make_get_thememod_value( 'mobile-menu' );
 $header_menu_container_class = 'header-bar-menu' . ( 'header-bar' === $mobile_menu ? ' mobile-menu': ' desktop-menu' );
-$logo_favicon = make_get_thememod_value( 'logo-favicon' );
-
 $header_bar_menu = wp_nav_menu( array(
 	'theme_location'  => 'header-bar',
 	'container_class' => $header_menu_container_class,
@@ -26,12 +24,18 @@ set_query_var( 'header_bar_menu', $header_bar_menu );
 	if (
 		make_get_thememod_value( 'header-text' )
 		||
+		make_get_thememod_value( 'header-show-search' )
+		||
 		( make_has_socialicons() && make_get_thememod_value( 'header-show-social' ) )
 		||
 		! empty( $header_bar_menu )
 	) : ?>
 	<div class="header-bar<?php echo esc_attr( $subheader_class ); ?>">
 		<div class="container">
+			<?php // Search form
+			if ( make_get_thememod_value( 'header-show-search' ) ) :
+				get_search_form();
+			endif; ?>
 			<?php // Social links
 			make_socialicons( 'header' ); ?>
 			<?php // Header text; shown only if there is no header menu
@@ -42,6 +46,8 @@ set_query_var( 'header_bar_menu', $header_bar_menu );
 			<?php endif; ?>
 
 			<?php get_template_part( 'partials/nav', 'header-bar' ); ?>
+                
+            <a href="#footer-2" class="search-form-link"><i class="fa fa-search"></i></a>
 		</div>
 	</div>
 	<?php endif; ?>
@@ -65,11 +71,6 @@ set_query_var( 'header_bar_menu', $header_bar_menu );
 				</span>
 				<?php endif; ?>
 			</div>
-
-			<?php // Search form
-			if ( make_get_thememod_value( 'header-show-search' ) ) :
-				get_search_form();
-			endif; ?>
 
 			<?php get_template_part( 'partials/nav', 'header-main' ); ?>
 		</div>

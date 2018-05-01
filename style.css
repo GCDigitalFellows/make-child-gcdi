@@ -37,6 +37,20 @@ h2, h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
     color: #171717;
 }
 
+.header-bar .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.header-bar .container .search-form-link {
+    flex-shrink: 1;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
 /* Header bar should include landing page as first link that should be styled */
 
 ul#menu-top-navigation-menu > li > a {
@@ -52,64 +66,6 @@ ul#menu-top-navigation-menu > li:first-child > a {
     font-weight: 700;
     line-height: 1.2;
 }
-
-/**
- * Search form
- *
- * Search field is hidden until hover action triggered
- */
-
-.search-form {
-    display: flex;
-    flex-direction: row;
-}
-
-.search-form input.search-field {
-    order: 1;
-    border: 0;
-    border-bottom: 1px solid #29a6dd;
-    background: #ffffff;
-    color: #171717;
-
-    -webkit-transition: width .55s ease;
-    -moz-transition: width .55s ease;
-    -ms-transition: width .55s ease;
-    -o-transition: width .55s ease;
-    transition: width .55s ease;
-}
-
-.search-form .search-submit {
-    order: 2;
-    display: inherit; /* by default Make hides button */
-    width: 2.5em;
-    background: #ffffff;
-    color: #171717;
-    border-top: 3px solid #29a6dd;
-    border-left: 3px solid #29a6dd;
-    border-bottom: 1px solid #29a6dd;
-    border-right: 1px solid #29a6dd;
-    padding: 0;
-}
-
-/*
-.search-form:hover .search-submit {
-}
-*/
-
-.search-form .fa-search {
-    z-index: 1;
-    margin: auto;
-}
-
-.search-form input.search-field:focus, .search-form input.search-field:active{
-    outline:none;
-}
-
-/*
-.search-form:hover input.search-field {
-    visibility: visible;
-}
-*/
 
 .header-layout-3 .site-navigation .menu {
     border-top: 0;
@@ -252,6 +208,10 @@ ul#menu-top-navigation-menu > li:first-child > a {
     padding-left: 3px;
 }
 
+.footer-1 .widget_text {
+    padding-left: 6px;
+}
+
 .footer-1 .widget > .image {
     max-height: 150px !important;
     height: auto !important;
@@ -263,8 +223,34 @@ ul#menu-top-navigation-menu > li:first-child > a {
    border-bottom: 2px solid black;
 }
 
-.footer-2 {
-    display: none;
+.footer-2 { 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-shrink: 2;
+    justify-content: flex-end;
+    margin: 0 !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.footer-2 form.search-form {
+    margin: 0 !important;
+}
+
+.footer-2 input.search-field {
+    background: transparent !important;  
+    color: rgb(70, 72, 73);
+    font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.3em;
+    padding: 0;
+    border: 0 !important; 
+    border-bottom: 2px solid rgb(185, 188, 191) !important;
+}
+
+.footer-2 input.search-field:hover,
+.footer-2 input.search-field:focus {
+    border-bottom: 2px solid #e4af32 !important;
 }
 
 .footer-social-links {
