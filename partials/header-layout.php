@@ -32,18 +32,18 @@ set_query_var( 'header_bar_menu', $header_bar_menu );
 	) : ?>
 	<div class="header-bar<?php echo esc_attr( $subheader_class ); ?>">
 		<div class="container">
-			<?php // Search form
-			if ( make_get_thememod_value( 'header-show-search' ) ) :
-				get_search_form();
-			endif; ?>
-			<?php // Social links
-			make_socialicons( 'header' ); ?>
-			<?php // Header text; shown only if there is no header menu
-			if ( ( make_get_thememod_value( 'header-text' ) || is_customize_preview() ) && empty( $header_bar_menu ) ) : ?>
-				<span class="header-text">
-				<?php echo make_get_thememod_value( 'header-text' ); ?>
-				</span>
-			<?php endif; ?>
+            <div class="branding">
+                <?php // Logo
+                if ( make_has_logo() ) : ?>
+                    <?php make_logo(); ?>
+                <?php endif; ?>
+                <?php // Site title
+                if ( get_bloginfo( 'name' ) ) : ?>
+                <h1 class="site-title<?php if ( make_get_thememod_value( 'hide-site-title' ) ) echo ' screen-reader-text'; ?>">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                </h1>
+                <?php endif; ?>
+            </div>
 
 			<?php get_template_part( 'partials/nav', 'header-bar' ); ?>
                 
@@ -51,28 +51,4 @@ set_query_var( 'header_bar_menu', $header_bar_menu );
 		</div>
 	</div>
 	<?php endif; ?>
-	<div class="site-header-main">
-		<div class="container">
-			<div class="site-branding">
-				<?php // Logo
-				if ( make_has_logo() ) : ?>
-					<?php make_logo(); ?>
-				<?php endif; ?>
-				<?php // Site title
-				if ( get_bloginfo( 'name' ) ) : ?>
-				<h1 class="site-title<?php if ( make_get_thememod_value( 'hide-site-title' ) ) echo ' screen-reader-text'; ?>">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</h1>
-				<?php endif; ?>
-				<?php // Tagline
-				if ( get_bloginfo( 'description' ) ) : ?>
-				<span class="site-description<?php if ( make_get_thememod_value( 'hide-tagline' ) ) echo ' screen-reader-text'; ?>">
-					<?php bloginfo( 'description' ); ?>
-				</span>
-				<?php endif; ?>
-			</div>
-
-			<?php get_template_part( 'partials/nav', 'header-main' ); ?>
-		</div>
-	</div>
 </header>
