@@ -45,7 +45,7 @@ h2, h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
 }
 
 .header-bar .container .header-navigation {
-    flex-grow: 4;
+    flex-grow: 4; /* High value so menu is wide */
 }
 
 .header-bar .container .branding {
@@ -75,7 +75,7 @@ h2, h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
 .header-bar .container .search-form-link {
     flex-shrink: 1;
     font-size: 1.5em;
-    cursor: pointer;
+    cursor: pointer; /* FIXME: Supposed to select input box referenced but not working */
 }
 
 /* Header bar should include landing page as first link that should be styled */
@@ -107,18 +107,17 @@ ul#menu-top-navigation-menu > li > a {
     border-left: 3px solid #29a6dd;
 }
 
-/* .builder-banner-content h1 { */
-/*     text-align: center; */
-/*     font-size: 46px; */
-/*     font-size: 4.6rem; */
-/*     font-weight: 700; */
-/*     line-height: 1.2; */
-/* } */
+.builder-banner-content h1 {
+    text-align: center;
+    font-size: 46px;
+    font-size: 4.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
 
 /**
- * Landing page: Quicklinks
+ * Quicklinks
  *
- * Make buttons
  */
 
 .gcdi-quicklinks .ttfmake-button {
@@ -142,6 +141,38 @@ ul#menu-top-navigation-menu > li > a {
     line-height: 1.1em;
 }
 
+.gcdi-quicklinks ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.gcdi-quicklinks li {
+    border-radius: 5px !important;
+    padding: 10px !important;
+    background-color: white !important;
+    border-top: 2px solid #29a6dd;
+    border-left: 2px solid #29a6dd;
+    border-right: 2px solid #171717;
+    border-bottom: 2px solid #171717;
+    list-style: none;
+}
+
+.gcdi-quicklinks li a {
+    color: black !important;
+    font-family: IBM Plex Sans Condensed !important;
+    font-weight: bold !important;
+    font-size: 1.2em !important;
+}
+
+.gcdi-quicklinks li:hover,
+.gcdi-quicklinks a:hover {
+    color: #29a6dd !important;
+}
+
 .gcdi-quicklinks .ttfmake-button .fa {
     font-size: 1.75em;
     margin-bottom: 10px;
@@ -152,14 +183,12 @@ ul#menu-top-navigation-menu > li > a {
 }
 
 /**
- * Post lists
+ * Thumbnail images
  *
  */
 
-.ttfmp-post-list-item {
-}
-
-.ttfmp-post-list-item-image, .gcdi-quicklinks .size-thumbnail {
+.ttfmp-post-list-item-image, 
+.gcdi-quicklinks .size-thumbnail {
     filter: grayscale(100%) contrast(115%) brightness(100%);
     border-radius: 5px;
     padding: 0;
@@ -170,6 +199,12 @@ ul#menu-top-navigation-menu > li > a {
     border-top: 3px solid #171717;
     border-left: 3px solid #171717;
 }
+
+/**
+ * Post lists
+ *
+ */
+
 
 .ttfmp-post-list-item-title {
     border-bottom: 2px solid #e4af32;
@@ -382,6 +417,11 @@ ul#menu-top-navigation-menu > li > a {
 .gcdi-profiles .builder-text-content ul li {
     padding-right: .5em;
 }
+
+/**
+ * CUNY Academic Commons social media icon
+ * 
+ */
 
 .fa-cac {
     height: 1em; 
