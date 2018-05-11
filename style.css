@@ -121,17 +121,12 @@ ul#menu-top-navigation-menu > li > a {
  * Make buttons
  */
 
-.gcdi-quicklinks div.builder_text_row {
-    display: flex;
-}
-
-.gcdi-quicklinks div.builder-text-column {
-    flex: 1;
-    padding: 1em;
-}
-
 .gcdi-quicklinks .ttfmake-button {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100px;
     border-radius: 5px !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
@@ -144,7 +139,6 @@ ul#menu-top-navigation-menu > li > a {
     border-left: 2px solid #29a6dd;
     border-right: 2px solid #171717;
     border-bottom: 2px solid #171717;
-    text-align: center;
     line-height: 1.1em;
 }
 
