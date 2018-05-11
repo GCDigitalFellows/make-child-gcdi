@@ -277,6 +277,10 @@ ul#menu-top-navigation-menu > li > a {
     flex-direction: column;
 }
 
+.footer-social-links ul .fa {
+    vertical-align: top;
+}
+
 /* Medium screens */
 @media all and (max-width: 800px) {
     .footer-1,
