@@ -363,8 +363,9 @@ ul#menu-top-navigation-menu > li > a {
 .gcdi-profiles .builder-text-content {
     display: grid;
     grid-template-columns: 150px auto;
-    grid-template-rows: 50px 50px 50px;
+    grid-template-rows:  1fr 2fr 1fr;
     margin-bottom: 20px;
+    height: 150px;
     background-color: #fff;
     border-top: 2px solid #e4af32;
     border-left: 2px solid #e4af32;
@@ -374,7 +375,6 @@ ul#menu-top-navigation-menu > li > a {
 .gcdi-profiles .builder-text-content p {
     grid-row-start: 1;
     grid-row-end: span 3;
-    max-width: 150px;
     filter: grayscale(100%) contrast(115%) brightness(100%);
 }
 
@@ -391,6 +391,7 @@ ul#menu-top-navigation-menu > li > a {
     grid-column-start: 2;
     grid-row-start: 2;
     text-align: right;
+    font-weight: normal !important;
     padding: 0 5px 0 5px;
     margin-left: auto;
 }
