@@ -443,6 +443,18 @@ ul#menu-top-navigation-menu > li > a {
 }
 
 /**
+* Calendar page
+*
+*/ 
+.tribe-events-cal-links {
+    box-sizing: border-box;
+    background-color: white;    
+    padding-bottom: 1%; 
+    text-align: center;
+}
+}
+
+/**
  * Resources page
  *
  */
