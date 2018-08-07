@@ -441,18 +441,20 @@ ul#menu-top-navigation-menu > li > a {
     text-align: center;
     vertical-align: middle;
 }
-
 /**
-* Calendar page
-*
-*/ 
+* Calendar
+* 
+*/
+
 .tribe-events-cal-links {
     box-sizing: border-box;
-    background-color: white;    
+    background-color: white;
+    color: black;
     padding-bottom: 1%; 
-    text-align: center;
+    text-align: left;
 }
 }
+
 
 /**
  * Resources page
