@@ -151,3 +151,5 @@ function ecp_add_month_ical() {
     '<-- ".tribe-events-cal-links" -->';
  }
 }
+/* Comment
+*/
