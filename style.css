@@ -87,7 +87,8 @@ ul#menu-top-navigation-menu > li > a {
 }
 
 .header-bar .menu a:active,
-.header-bar .menu a:hover {
+.header-bar .menu a:hover,
+.header-bar .menu .current-menu-item a {
 	color: #bf272e;
 	border-bottom-color: #bf272e;
 }
