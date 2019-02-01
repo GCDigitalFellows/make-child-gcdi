@@ -118,6 +118,10 @@ ul#menu-top-navigation-menu > li > a {
 	height: 31px;
 }
 
+#site-header.fixed-header .header-bar .menu a {
+	padding-bottom: 17.5px;
+}
+
 /**
  * Landing Page
  */
