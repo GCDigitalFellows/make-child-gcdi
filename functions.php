@@ -9,47 +9,23 @@
  *
  * @see MAKE_Setup_Scripts::enqueue_frontend_styles()
  */
-define( 'TTFMAKE_CHILD_VERSION', '0.1' );
+define( 'TTFMAKE_CHILD_VERSION', '1.1.0' );
 
 /**
- * Turn off the parent theme styles.
- *
- * If you would like to use this child theme to style Make from scratch, rather
- * than simply overriding specific style rules, remove the '//' from the
- * 'add_filter' line below. This will tell the theme not to enqueue the parent
- * stylesheet along with the child one.
+ * Updates our stylesheet version number for cache busting purposes.
  */
-//add_filter( 'make_enqueue_parent_stylesheet', '__return_false' );
+function gcdi_update_stylesheet_version_number() {
+	// Ensure the Make API is available.
+	if ( ! function_exists( 'Make' ) ) {
+		return;
+	}
 
-/**
- * Define a version number for the child theme's stylesheet.
- *
- * In order to prevent old versions of the child theme's stylesheet from loading
- * from a browser's cache, update the version number below each time changes are
- * made to the stylesheet.
- *
- * @uses MAKE_Setup_Scripts::update_version()
- */
-function childtheme_style_version() {
-    // Ensure the Make API is available.
-    if ( ! function_exists( 'Make' ) ) {
-        return;
-    }
-    // Version string to append to the child theme's style.css URL.
-    $version = '1.0.0'; // <- Update this!
-    Make()->scripts()->update_version( 'make-main', $version, 'style' );
+	// Update this whenever we make an update to bust cache.
+	$version = '1.0.0';
+
+	Make()->scripts()->update_version( 'make-main', $version, 'style' );
 }
-add_action( 'wp_enqueue_scripts', 'childtheme_style_version', 20 );
-
-function make_parent_theme_enqueue_styles() {
-    wp_enqueue_style( 'make-style', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'make-gcdi-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array( 'make-style' )
-    );
-
-}
-add_action( 'wp_enqueue_scripts', 'make_parent_theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'gcdi_update_stylesheet_version_number', 20 );
 
 function gcdi_update_setting_defaults() {
     $gcdi_settings = array (
