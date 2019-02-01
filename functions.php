@@ -131,6 +131,6 @@ function ecp_add_month_ical() {
 	if ( tribe_is_month() ) {
 		echo '<div class="tribe-events-cal-links">';
 		echo '<a title="' . $title . '" href="' . esc_url( tribe_get_ical_link() ) . '">+ Export Month\'s Events</a>';
-		echo '</div><-- .tribe-events-cal-links -->';
+		echo '</div><!-- .tribe-events-cal-links -->';
 	}
 }
