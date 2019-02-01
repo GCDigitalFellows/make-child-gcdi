@@ -81,6 +81,17 @@ ul#menu-top-navigation-menu > li > a {
     line-height: 1.2;
 }
 
+.header-bar .menu a {
+	border-bottom: 3px solid transparent;
+	padding: 0 8px 40px 8px;
+}
+
+.header-bar .menu a:active,
+.header-bar .menu a:hover {
+	color: #bf272e;
+	border-bottom-color: #bf272e;
+}
+
 .header-layout-3 .site-navigation .menu {
     border-top: 0;
     border-bottom: 0;
