@@ -12,20 +12,35 @@
 define( 'TTFMAKE_CHILD_VERSION', '1.1.0' );
 
 /**
- * Updates our stylesheet version number for cache busting purposes.
+ * Enqueues assets.
+ *
+ * - Updates our stylesheet version number for cache busting purposes.
+ * - Enqueues our custom JS.
  */
-function gcdi_update_stylesheet_version_number() {
+function gcdi_enqueue_scripts() {
 	// Ensure the Make API is available.
 	if ( ! function_exists( 'Make' ) ) {
 		return;
 	}
 
 	// Update this whenever we make an update to bust cache.
-	$version = '20190131c';
+	$css_version = '20190131c';
+	$js_version  = '20190201';
 
-	Make()->scripts()->update_version( 'make-main', $version, 'style' );
+	/* CSS ***************************************************/
+
+	// Update our stylesheet version number.
+	Make()->scripts()->update_version( 'make-main', $css_version, 'style' );
+
+	/* JS ****************************************************/
+
+	// Register jSticky.
+	wp_register_script( 'jquery-jsticky', 'https://cdn.jsdelivr.net/gh/AndrewHenderson/jSticky@master/jquery.jsticky.min.js', array( 'jquery' ) );
+
+	// Enqueue our JS.
+	wp_enqueue_script( 'gcdi', get_stylesheet_directory_uri() . '/js/app.js', array( 'jquery-jsticky' ), $js_version );
 }
-add_action( 'wp_enqueue_scripts', 'gcdi_update_stylesheet_version_number', 20 );
+add_action( 'wp_enqueue_scripts', 'gcdi_enqueue_scripts', 20 );
 
 function gcdi_update_setting_defaults() {
     $gcdi_settings = array (

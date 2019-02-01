@@ -32,6 +32,10 @@ h2, h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
  * Uses flexbox to layout logo/branding, navigation, and overridden searchform on one line
  */
 
+#site-header {
+	float: none;
+}
+
 .header-bar {
     background-color: #fff;
     color: #171717;
@@ -41,9 +45,8 @@ h2, h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 30px 0;
+    padding: 30px 0 28.5px 0;
 }
-
 
 .header-bar .branding {
 	flex-grow: 50;
@@ -100,6 +103,19 @@ ul#menu-top-navigation-menu > li > a {
 
 .no-site-tagline .site-title {
 	margin-bottom: 0;
+}
+
+/**
+ * Fixed header styles
+ */
+
+#site-header.fixed-header .container {
+	padding: 10px 0 9px 0;
+}
+
+#site-header.fixed-header .site-title a {
+	width: 250px;
+	height: 31px;
 }
 
 /**
