@@ -21,7 +21,7 @@ function gcdi_update_stylesheet_version_number() {
 	}
 
 	// Update this whenever we make an update to bust cache.
-	$version = '1.0.0';
+	$version = '20190131';
 
 	Make()->scripts()->update_version( 'make-main', $version, 'style' );
 }

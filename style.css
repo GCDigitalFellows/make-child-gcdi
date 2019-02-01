@@ -86,6 +86,10 @@ ul#menu-top-navigation-menu > li > a {
     border-bottom: 0;
 }
 
+.no-site-tagline .site-title {
+	margin-bottom: 0;
+}
+
 /**
  * Landing Page
  */
