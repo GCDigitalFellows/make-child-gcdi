@@ -41,40 +41,34 @@ h2, h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0;
+    padding: 30px 0;
 }
 
-.header-bar .container .header-navigation {
-    flex-grow: 4; /* High value so menu is wide */
+
+.header-bar .branding {
+	flex-grow: 50;
 }
 
-.header-bar .container .branding {
-    display: flex;
-    flex-direction: row;
-    align-content: flex-start;
-    margin-right: 10px;
-    padding: 0;
+/* Hide Make's custom logo since we hardcode the logo below */
+.header-bar .custom-logo-link {
+	display: none;
 }
 
-.header-bar .container .branding .site-title {
-    font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 2em;
-    margin: 0;
-    margin-left: 5px;
+.header-bar .container .branding .site-title a {
+	display: block;
+	text-indent: -9999px;
+	width: 339px;
+	height: 42px;
+	background: url(images/gcdi-logo.svg);
 }
 
-.header-bar .container .branding .custom-logo-link {
-    margin: 0;
-}
-
-.header-bar .container .custom-logo {
-    height: 2em;
-    width: auto;
+.header-bar .menu {
+	margin: 0;
 }
 
 .header-bar .container .search-form-link {
-    flex-shrink: 1;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    margin-left: 1em;
     cursor: pointer; /* FIXME: Supposed to select input box referenced but not working */
 }
 
@@ -441,6 +435,7 @@ ul#menu-top-navigation-menu > li > a {
     text-align: center;
     vertical-align: middle;
 }
+
 /**
 * Calendar
 * 
