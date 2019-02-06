@@ -24,10 +24,13 @@ function gcdi_enqueue_scripts() {
 	}
 
 	// Update this whenever we make an update to bust cache.
-	$css_version = '20190201b';
+	$css_version = '20190205';
 	$js_version  = '20190201';
 
 	/* CSS ***************************************************/
+
+	// Enqueue Slicknav CSS.
+	wp_enqueue_style( 'jquery-slicknav', 'https://cdn.jsdelivr.net/gh/ComputerWolf/SlickNav/dist/slicknav.min.css' );
 
 	// Update our stylesheet version number.
 	Make()->scripts()->update_version( 'make-main', $css_version, 'style' );
@@ -36,9 +39,11 @@ function gcdi_enqueue_scripts() {
 
 	// Register jSticky.
 	wp_register_script( 'jquery-jsticky', 'https://cdn.jsdelivr.net/gh/AndrewHenderson/jSticky@master/jquery.jsticky.min.js', array( 'jquery' ) );
+	// Register SlickNav.
+	wp_register_script( 'jquery-slicknav', 'https://cdn.jsdelivr.net/gh/ComputerWolf/SlickNav/dist/jquery.slicknav.min.js', array( 'jquery' ) );
 
 	// Enqueue our JS.
-	wp_enqueue_script( 'gcdi', get_stylesheet_directory_uri() . '/js/app.js', array( 'jquery-jsticky' ), $js_version );
+	wp_enqueue_script( 'gcdi', get_stylesheet_directory_uri() . '/js/app.js', array( 'jquery-jsticky', 'jquery-slicknav' ), $js_version );
 }
 add_action( 'wp_enqueue_scripts', 'gcdi_enqueue_scripts', 20 );
 

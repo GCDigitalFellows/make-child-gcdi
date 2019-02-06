@@ -22,7 +22,10 @@ h1 {
     font-family: 'IBM Plex Serif', 'Georgia', Times, serif;
 }
 
-h2, h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
+h2, h3, h4, h5, h6, .site-navigation,
+.header-bar,
+.site-header-main,
+body .slicknav_menu .slicknav_menutxt  {
     font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -63,6 +66,8 @@ h2, h3, h4, h5, h6, .site-navigation, .header-bar, .site-header-main  {
 	width: 339px;
 	height: 42px;
 	background: url(images/gcdi-logo.svg);
+	position: relative;
+	z-index: 99999;
 }
 
 .header-bar .menu {
@@ -120,6 +125,83 @@ ul#menu-top-navigation-menu > li > a {
 
 #site-header.fixed-header .header-bar .menu a {
 	padding-bottom: 17.5px;
+}
+
+/**
+ * Mobile menu
+ */
+body .slicknav_menu {
+	display: none;
+	padding: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+}
+
+body .slicknav_nav {
+	margin-top: 3.65em;
+	background: #eaecee;
+}
+
+body .slicknav_nav a {
+	color: #000;
+	font-weight: normal;
+}
+
+body .slicknav_nav a:hover {
+	background: transparent;
+	color: #bf272e;
+}
+
+body .slicknav_btn {
+	background: #fff;
+	margin: 8px 0;
+}
+
+body .slicknav_menu .slicknav_menutxt {
+	color: #171717;
+	font-size: 19px;
+	font-weight: normal;
+	text-shadow: none;
+}
+
+body .slicknav_menu .slicknav_icon-bar {
+	background-color: #171717;
+}
+
+.slicknav_menu .slicknav_open .slicknav_icon-bar {
+	display: none;
+}
+
+.slicknav_menu .slicknav_open .slicknav_icon:before {
+	content: 'X';
+	color: #171717;
+	font-weight: bold;
+	font-size: 1.5em;
+	position: relative;
+	top: -1.5px;
+}
+
+@media screen and (max-width: 840px) {
+	#site-header .site-title a {
+		margin-left: 10px;
+		width: 250px;
+		height: 31px;
+	}
+
+	#site-header .container {
+		padding: 10px 0 9px 0;
+	}
+
+	.js .slicknav_menu {
+		background: transparent;
+		display: block;
+	}
+
+	.js .header-navigation,
+	.js .search-form-link {
+		display: none;
+	}
 }
 
 /**

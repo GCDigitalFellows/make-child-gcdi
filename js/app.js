@@ -5,4 +5,7 @@ jQuery(function($){
 		//stopper: "#bar" // Id, class, or number value
 		stickyClass: 'fixed-header' // Class applied to element when it's stuck
 	});
+
+	$('.header-bar-menu ul').slicknav({
+	});
 });
