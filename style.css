@@ -204,6 +204,12 @@ body .slicknav_menu .slicknav_icon-bar {
 	}
 }
 
+@media screen and (max-width: 782px) {
+	body.admin-bar #site-header.fixed-header {
+		top: 46px !important;
+	}
+}
+
 /**
  * Landing Page
  */
