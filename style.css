@@ -146,6 +146,7 @@ body .slicknav_nav {
 body .slicknav_nav a {
 	color: #000;
 	font-weight: normal;
+	padding: 10px;
 }
 
 body .slicknav_nav a:hover {
