@@ -574,6 +574,29 @@ body .slicknav_menu .slicknav_icon-bar {
     text-align: left;
 }
 
+#legend_box {
+	margin-top: 1em;
+}
+
+#tribe-events #legend_box #legend li {
+	border: 0;
+	border-radius: 4px;
+	font: normal 14px/100% "IBM Plex Sans Condensed";
+	height: 26px;
+	padding: 0;
+}
+
+#legend a {
+	display: inline-block;
+	border-radius: 4px;
+	padding: 6px 15px;
+	text-decoration: none;
+}
+
+#legend a:hover {
+	background: #000;
+}
+
 /**
  * Resources page
  *
