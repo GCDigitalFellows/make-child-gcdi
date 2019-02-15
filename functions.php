@@ -24,7 +24,7 @@ function gcdi_enqueue_scripts() {
 	}
 
 	// Update this whenever we make an update to bust cache.
-	$css_version = '20190212';
+	$css_version = '20190215';
 	$js_version  = '20190201';
 
 	/* CSS ***************************************************/
@@ -119,7 +119,7 @@ function childtheme_change_cac_icon() {
 	make_update_socialicon_definition(
 		'commons.gc.cuny.edu',
 		array(
-			'title' => _x( 'CUNY Academic Commons', 'CAC', 'make-child' ),
+			'title' => 'Commons',
 			'class' => array( 'fa', 'fa-cac-icon' ),
 		)
 	);
