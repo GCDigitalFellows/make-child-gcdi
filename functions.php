@@ -139,3 +139,91 @@ function ecp_add_month_ical() {
 		echo '</div><!-- .tribe-events-cal-links -->';
 	}
 }
+
+/**
+ * Follow Us widget, piggybacks off Make's Social Links feature.
+ *
+ * @see WP_Widget
+ */
+class GCDI_Follow_Us_Widget extends WP_Widget {
+
+	/**
+	 * Sets up a new widget instance.
+	 */
+	public function __construct() {
+		$widget_ops = array(
+			'classname' => 'widget_follow_us',
+			'description' => "Displays Make's Social Links feature in a widget.",
+			'customize_selective_refresh' => true,
+		);
+		parent::__construct( 'follow-us', 'Follow Us', $widget_ops );
+	}
+
+	/**
+	 * Outputs the content for the current widget instance.
+	 *
+	 * @since 2.8.0
+	 *
+	 * @param array $args     Display arguments including 'before_title', 'after_title',
+	 *                        'before_widget', and 'after_widget'.
+	 * @param array $instance Settings for the current widget instance.
+	 */
+	public function widget( $args, $instance ) {
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
+
+		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
+		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+
+		echo $args['before_widget'];
+		if ( $title ) {
+			echo $args['before_title'] . $title . $args['after_title'];
+		}
+
+		if ( is_customize_preview() ) {
+			echo '<div class="footer-social-links">';
+		}
+
+		$icons = Make()->socialicons()->render_icons();
+		$icons = str_replace( array( '<span class="screen-reader-text">', '</span>' ), '', $icons );
+		echo $icons;
+
+		if ( is_customize_preview() ) {
+			echo '</div>';
+		}
+
+		echo $args['after_widget'];
+	}
+
+	/**
+	 * Outputs the settings form for the widget.
+	 *
+	 * @param array $instance Current settings.
+	 */
+	public function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '') );
+		$title = $instance['title'];
+		?>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
+		<?php
+	}
+
+	/**
+	 * Handles updating settings for the current widget instance.
+	 *
+	 * @param array $new_instance New settings for this instance as input by the user via
+	 *                            WP_Widget::form().
+	 * @param array $old_instance Old settings for this instance.
+	 * @return array Updated settings.
+	 */
+	public function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$new_instance = wp_parse_args((array) $new_instance, array( 'title' => ''));
+		$instance['title'] = sanitize_text_field( $new_instance['title'] );
+		return $instance;
+	}
+
+}
+
+add_action( 'widgets_init', function() {
+	register_widget( 'GCDI_Follow_Us_Widget' );
+} );
