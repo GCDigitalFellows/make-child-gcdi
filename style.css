@@ -374,7 +374,7 @@ body .slicknav_menu .slicknav_icon-bar {
     margin: 0 !important;
 }
 
-#footer-2 .widget_search .search-submit {
+#site-wrapper .search-submit {
     background: #3070d1;
     width: auto;
     height: auto;
