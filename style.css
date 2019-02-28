@@ -25,7 +25,8 @@ h1 {
 h2, h3, h4, h5, h6, .site-navigation,
 .header-bar,
 .site-header-main,
-body .slicknav_menu .slicknav_menutxt  {
+body .slicknav_menu .slicknav_menutxt,
+.builder-banner-content h1  {
     font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -233,7 +234,7 @@ body .slicknav_menu .slicknav_icon-bar {
 .builder-banner-inner-content h2 {
 	font-weight: 600;
 	text-align: center;
-	text-shadow: 0px 0px 2px rgba(109, 109, 109, 1);
+	text-shadow: 0px 0px 3px rgba(109, 109, 109, 1);
 }
 
 /**
