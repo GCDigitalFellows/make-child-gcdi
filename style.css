@@ -566,6 +566,11 @@ i.fa-cac-icon {
     padding-right: .5em;
 }
 
+.fa-cac {
+    height: 1em;
+    vertical-align: bottom;
+}
+
 /**
 * Calendar
 * 
