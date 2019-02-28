@@ -270,22 +270,17 @@ body .slicknav_menu .slicknav_icon-bar {
     margin-bottom: 10px;
 }
 
+
 /**
  * Thumbnail images
  *
  */
 
-.ttfmp-post-list-item-image, 
+.ttfmp-post-list-item-image,
 .gcdi-quicklinks .size-thumbnail {
-    filter: grayscale(100%) contrast(115%) brightness(100%);
-    border-radius: 5px;
     padding: 0;
     background-color: white;
     color: black;
-    border-right: 2px solid #171717;
-    border-bottom: 2px solid #171717;
-    border-top: 3px solid #171717;
-    border-left: 3px solid #171717;
 }
 
 /**
@@ -295,16 +290,10 @@ body .slicknav_menu .slicknav_icon-bar {
 
 
 .ttfmp-post-list-item-title {
-    border-bottom: 2px solid #e4af32;
-    margin: 0;
-    padding-left: 5px;
-    padding-right: 5px;
+	line-height: 1.2;
 }
 
 .ttfmp-post-list-item-author, .ttfmp-post-list-item-date {
-    text-align: right;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 /**
