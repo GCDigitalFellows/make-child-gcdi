@@ -695,6 +695,21 @@ a:hover i.fa-cac-icon {
 	text-decoration: none;
 }
 
+.builder-section-postlist .ttfmp-post-list-item-footer a {
+	color: #6b6d71;
+}
+
+.builder-section-banner .cycle-pager .cycle-pager-active, .ttfmake-shortcode-slider .cycle-pager .cycle-pager-active {
+	color: #4e5254;
+}
+
+.builder-section-banner .cycle-pager, .ttfmake-shortcode-slider .cycle-pager {
+	color: #83929e;
+}
+
+.builder-banner-slide {
+	background-color: #6b6d71;
+}
 
 /* FIXME: This is a workaround due to a WP core issue */
 
