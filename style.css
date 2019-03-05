@@ -30,6 +30,12 @@ body .slicknav_menu .slicknav_menutxt,
     font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
 }
 
+#site-main a:hover,
+#sidebar-right a:hover,
+#site-footer a:hover {
+	text-decoration: underline;
+}
+
 /**
  * Header navigation
  *
