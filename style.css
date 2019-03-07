@@ -37,6 +37,10 @@ body .slicknav_menu .slicknav_menutxt,
 	text-decoration: underline;
 }
 
+.uppercase {
+	text-transform: uppercase;
+}
+
 /**
  * Header navigation
  *
@@ -300,11 +304,31 @@ body .slicknav_menu .slicknav_icon-bar {
  */
 
 
-.ttfmp-post-list-item-title {
+.ttfmp-post-list-item-title,
+.ttfmp-post-list-item-source,
+.builder-section-postlist .ttfmp-post-list-item-date {
+	font-family: "IBM Plex Sans";
+	font-weight: normal;
+	letter-spacing: normal;
 	line-height: 1.2;
+	text-transform: none;
 }
 
-.ttfmp-post-list-item-author, .ttfmp-post-list-item-date {
+.ttfmp-post-list-item-title {
+	font-size: 22px;
+	margin-top: 1.8rem;
+	margin-bottom: 1.4rem;
+}
+
+.ttfmp-post-list-item-source,
+.builder-section-postlist .ttfmp-post-list-item-date {
+	display: block;
+	font-size: 14px;
+	margin-bottom: .9rem;
+}
+
+.ttfmp-post-list-item-footer .fa {
+	color: #6b6d71;
 }
 
 /**

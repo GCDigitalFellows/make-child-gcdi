@@ -99,7 +99,7 @@ $t_wrap = apply_filters( 'ttfmp_post_list_post_title_element', $t_wrap, ttfmake_
 	<?php endif; ?>
 	<?php if ( $d['show-date'] ) : ?>
 	<span class="ttfmp-post-list-item-date">
-		<?php echo get_the_date(); ?>
+		<span class="uppercase"><?php echo get_the_date(); ?></span>
 
 		<?php if ( $nom_id = get_post_meta( $post->ID, 'nom_id', true ) ) : ?>
 			shared by GCDI
@@ -114,7 +114,7 @@ $t_wrap = apply_filters( 'ttfmp_post_list_post_title_element', $t_wrap, ttfmake_
 		?>
 
 		<span class="ttfmp-post-list-item-source">
-			Source: <a href="<?php echo esc_url( get_post_meta( $post->ID, 'item_link', true ) ); ?>" rel="nofollow" target="_blank">
+			<span class="uppercase">Source:</span> <a href="<?php echo esc_url( get_post_meta( $post->ID, 'item_link', true ) ); ?>" rel="nofollow">
 			<?php if ( $source_title ) : echo esc_html( $source_title );
 				else :
 					echo str_replace( array( 'https://', 'http://' ), '', $pf_meta['pf_source_link'] );
