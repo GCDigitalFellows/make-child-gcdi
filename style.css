@@ -303,19 +303,18 @@ body .slicknav_menu .slicknav_icon-bar {
  *
  */
 
-
 .ttfmp-post-list-item-title,
 .ttfmp-post-list-item-source,
 .builder-section-postlist .ttfmp-post-list-item-date {
 	font-family: "IBM Plex Sans";
 	font-weight: normal;
 	letter-spacing: normal;
-	line-height: 1.2;
 	text-transform: none;
 }
 
 .ttfmp-post-list-item-title {
 	font-size: 22px;
+	line-height: 1.2;
 	margin-top: 1.8rem;
 	margin-bottom: 1.4rem;
 }
@@ -324,12 +323,15 @@ body .slicknav_menu .slicknav_icon-bar {
 .builder-section-postlist .ttfmp-post-list-item-date {
 	display: block;
 	font-size: 14px;
+	line-height: 1.3;
 	margin-bottom: .9rem;
 }
 
+.entry-footer .fa,
 .ttfmp-post-list-item-footer .fa {
 	color: #6b6d71;
 }
+
 
 /**
  * Footer
@@ -724,6 +726,7 @@ a:hover i.fa-cac-icon {
 	text-decoration: none;
 }
 
+footer.entry-footer a,
 .builder-section-postlist .ttfmp-post-list-item-footer a {
 	color: #6b6d71;
 }
