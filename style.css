@@ -32,7 +32,8 @@ body .slicknav_menu .slicknav_menutxt,
 
 #site-main a:hover,
 #sidebar-right a:hover,
-#site-footer a:hover {
+#site-footer a:hover,
+#tribe-events-content a:hover {
 	text-decoration: underline;
 }
 
@@ -263,6 +264,10 @@ body .slicknav_menu .slicknav_icon-bar {
     background: #eaecee;
     color: #171717;
     line-height: 1.1em;
+}
+
+#site-main .gcdi-quicklinks a:hover {
+	text-decoration: none;
 }
 
 @media screen and (max-width: 800px) {
