@@ -71,22 +71,22 @@ $t_wrap = apply_filters( 'ttfmp_post_list_post_title_element', $t_wrap, ttfmake_
 	<?php if ( 'none' !== $thumbnail && get_post_thumbnail_id() ) : ?>
 	<figure class="ttfmp-post-list-item-thumb position-<?php echo esc_attr( $thumbnail ); ?>">
 		<?php if ( 'none' === $aspect ) : ?>
-		<a href="<?php the_permalink(); ?>">
+
 			<?php the_post_thumbnail( $thumbnail_size ); ?>
-		</a>
-		<?php else : 
+
+		<?php else :
 			$reader_txt = strip_tags( get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ) );
 			if ( empty( $reader_txt ) ) {
 				$reader_txt = 'Featured image thumbnail';
 			}
 		?>
+
 		<div class="ttfmp-post-list-item-image aspect-<?php echo esc_attr( $aspect ); ?>"<?php echo $image_style; ?>>
-			<a href="<?php the_permalink(); ?>">
-				<span class="screen-reader-text">
-					<?php echo $reader_txt; ?>
-				</span>
-			</a>
+			<span class="screen-reader-text">
+				<?php echo $reader_txt; ?>
+			</span>
 		</div>
+
 		<?php endif; ?>
 	</figure>
 	<?php endif; ?>
