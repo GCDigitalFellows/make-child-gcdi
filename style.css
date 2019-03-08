@@ -298,6 +298,29 @@ body .slicknav_menu .slicknav_icon-bar {
     color: black;
 }
 
+
+/**
+ * Single posts
+ */
+
+.entry-syndicated-byline:before,
+.entry-syndicated-byline:after {
+	content: "\00b7 ";
+}
+
+.entry-syndicated-byline:before {
+	padding-right: .6rem;
+}
+
+.entry-syndicated-byline:after {
+	padding-left: .6rem;
+}
+
+.entry-syndicated-byline {
+	font-style: normal;
+}
+
+
 /**
  * Post lists
  *
