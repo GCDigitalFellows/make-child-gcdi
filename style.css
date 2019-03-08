@@ -329,6 +329,11 @@ body .slicknav_menu .slicknav_icon-bar {
 	font-style: normal;
 }
 
+/* fix PressForward grabbing HTML source with another 'entry-content' DIV */
+.entry-content .entry-content {
+	clear: none;
+}
+
 
 /**
  * Post lists
