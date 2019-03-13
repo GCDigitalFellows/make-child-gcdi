@@ -530,6 +530,10 @@ i.fa-cac-icon {
 	vertical-align: middle;
 }
 
+.builder-section-text i.fa-cac-icon {
+	opacity: .75;
+}
+
 a:hover i.fa-cac-icon {
 	opacity: .6;
 }
