@@ -364,11 +364,54 @@ body .slicknav_menu .slicknav_icon-bar {
 	margin-bottom: .9rem;
 }
 
+.gcdi-thumb {
+	width: 100%;
+	position: relative;
+	display: block;
+	margin-bottom: .8em;
+}
+
+.gcdi-thumb.aspect-square {
+	padding-top: 100%;
+}
+
+.gcdi-thumb.aspect-landscape {
+	padding-top: 75%;
+}
+
+.gcdi-thumb.aspect-portrait {
+	padding-top: 133%;
+}
+
+.gcdi-thumb img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	max-height: 100%;
+	max-width: 100%;
+	display: block;
+	margin: auto;
+	object-fit: cover;
+}
+
+/* Remove aspect ratio under 800px width */
+@media all and (max-width: 799px) {
+	#site-main .gcdi-thumb {
+		padding-top: 0;
+	}
+	.gcdi-thumb img {
+		position: relative;
+		width: 100%;
+		height: auto;
+	}
+}
+
 .entry-footer .fa,
 .ttfmp-post-list-item-footer .fa {
 	color: #6b6d71;
 }
-
 
 /**
  * Footer

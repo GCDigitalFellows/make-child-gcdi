@@ -140,6 +140,35 @@ function ecp_add_month_ical() {
 	}
 }
 
+/*
+ * Fix postlist image aspect ratio to override Make's 'height:auto' CSS.
+ */
+add_filter( 'makeplus_postslist_output', function( $retval ) {
+	static $run_once = null;
+	if ( is_null( $run_once ) ) {
+		$run_once = true;
+
+		// Use JS to set the CSS height, which overrides Make's CSS.
+		add_action( 'wp_footer', function() {
+		?>
+
+<script>
+jQuery(".gcdi-thumb img").each(function() {
+	var $t = jQuery(this);
+	var ht = $t.attr("height");
+	ht = ht ? ht+"px" : "auto";
+	$t.css("height", ht);
+});
+</script>
+
+
+		<?php
+		} );
+	}
+
+	return $retval;
+} );
+
 /**
  * Follow Us widget, piggybacks off Make's Social Links feature.
  *

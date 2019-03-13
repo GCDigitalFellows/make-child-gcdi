@@ -68,31 +68,11 @@ $t_wrap = apply_filters( 'ttfmp_post_list_post_title_element', $t_wrap, ttfmake_
 
 <?php if ( 'none' !== $thumbnail || $d['show-title'] || $d['show-date'] || $d['show-author'] ) : ?>
 <header class="ttfmp-post-list-item-header">
-	<?php if ( 'none' !== $thumbnail && get_post_thumbnail_id() ) : ?>
-	<figure class="ttfmp-post-list-item-thumb position-<?php echo esc_attr( $thumbnail ); ?>">
-		<?php if ( 'none' === $aspect ) : ?>
-
-			<?php the_post_thumbnail( $thumbnail_size ); ?>
-
-		<?php else :
-			$reader_txt = strip_tags( get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ) );
-			if ( empty( $reader_txt ) ) {
-				$reader_txt = 'Featured image thumbnail';
-			}
-		?>
-
-		<div class="ttfmp-post-list-item-image aspect-<?php echo esc_attr( $aspect ); ?>"<?php echo $image_style; ?>>
-			<span class="screen-reader-text">
-				<?php echo $reader_txt; ?>
-			</span>
-		</div>
-
-		<?php endif; ?>
-	</figure>
-	<?php endif; ?>
 	<?php if ( $d['show-title'] ) : ?>
 	<<?php echo sanitize_key( $t_wrap ); ?> class="ttfmp-post-list-item-title">
 		<a href="<?php the_permalink(); ?>">
+			<span class="gcdi-thumb aspect-<?php echo esc_attr( $aspect ); ?>"><?php the_post_thumbnail( $thumbnail_size, array( 'alt' => '' ) ); ?></span>
+
 			<?php the_title(); ?>
 		</a>
 	</<?php echo sanitize_key( $t_wrap ); ?>>
