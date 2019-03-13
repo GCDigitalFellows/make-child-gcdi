@@ -84,7 +84,7 @@ $t_wrap = apply_filters( 'ttfmp_post_list_post_title_element', $t_wrap, ttfmake_
 		<?php if ( $nom_id = get_post_meta( $post->ID, 'nom_id', true ) ) : ?>
 			shared by GCDI
 		<?php else : ?>
-			by <?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?>		
+			by <?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?>
 		<?php endif; ?>
 	</span>
 

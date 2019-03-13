@@ -626,7 +626,7 @@ a:hover i.fa-cac-icon {
 		flex-direction: row;
 		flex-wrap: wrap;
 	}
-	
+
 	.footer-1 .widget:last-child {
 		margin-top: 2em;
 		margin-bottom: 1em;
@@ -718,16 +718,17 @@ a:hover i.fa-cac-icon {
     vertical-align: bottom;
 }
 
+
 /**
 * Calendar
-* 
+*
 */
 
 .tribe-events-cal-links {
     box-sizing: border-box;
     background-color: white;
     color: black;
-    padding-bottom: 1%; 
+    padding-bottom: 1%;
     text-align: left;
 }
 
