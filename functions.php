@@ -169,6 +169,32 @@ jQuery(".gcdi-thumb img").each(function() {
 	return $retval;
 } );
 
+/*
+ * Add term link at the end of postlists automatically.
+ */
+add_filter( 'makeplus_postslist_output', function( $retval, $query, $display ) {
+	$tax_query = $query->get( 'tax_query' );
+	if ( empty( $tax_query[0] ) || ! is_string( $tax_query[0]['terms'] ) ) {
+		return $retval;
+	}
+
+	$term = get_term_by( $tax_query[0]['field'], $tax_query[0]['terms'], $tax_query[0]['taxonomy'] );
+	$term = sanitize_term( $term, $tax_query[0]['taxonomy'] );
+
+	if ( 'news' === $tax_query[0]['terms'] ) {
+		$link = get_permalink( get_page_by_title( 'News' ) );
+	} else {
+		$link = get_term_link( $tax_query[0]['terms'], $tax_query[0]['taxonomy'] );
+	}
+
+	$link = sprintf( '<p><a href="%s">More from %s &rarr;</a></p>',
+		$link,
+		$term->name
+	);
+
+	return $retval . $link;
+}, 10, 3 );
+
 /**
  * Follow Us widget, piggybacks off Make's Social Links feature.
  *
