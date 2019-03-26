@@ -48,7 +48,7 @@ if (
 
 		<?php get_template_part( 'partials/nav', 'header-bar' ); ?>
 
-		<a href="#footer-2" class="search-form-link"><i class="fa fa-search"></i><span class="screen-reader-text">Search</span></a>
+		<a href="#search-field" class="search-form-link"><i class="fa fa-search"></i><span class="screen-reader-text">Search</span></a>
 	</div>
 </div>
 
