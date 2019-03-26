@@ -179,6 +179,10 @@ add_filter( 'makeplus_postslist_output', function( $retval, $query, $display ) {
 	}
 
 	$term = get_term_by( $tax_query[0]['field'], $tax_query[0]['terms'], $tax_query[0]['taxonomy'] );
+	if ( false === $term ) {
+		return $retval;
+	}
+
 	$term = sanitize_term( $term, $tax_query[0]['taxonomy'] );
 
 	if ( 'news' === $tax_query[0]['terms'] ) {
