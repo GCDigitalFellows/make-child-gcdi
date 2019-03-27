@@ -130,16 +130,6 @@ add_action( 'make_socialicons_loaded', 'childtheme_change_cac_icon' );
 // Disable Google Fonts
 add_filter( 'make_add_font_source_google', '__return_false' );
 
-// The Events Calendar - Add iCal Link Above Month View
-add_action( 'tribe_events_before_header', 'ecp_add_month_ical');
-function ecp_add_month_ical() {
-	if ( tribe_is_month() ) {
-		echo '<div class="tribe-events-cal-links">';
-		echo '<a title="' . $title . '" href="' . esc_url( tribe_get_ical_link() ) . '">+ Export Month\'s Events</a>';
-		echo '</div><!-- .tribe-events-cal-links -->';
-	}
-}
-
 /*
  * Fix postlist image aspect ratio to override Make's 'height:auto' CSS.
  */
