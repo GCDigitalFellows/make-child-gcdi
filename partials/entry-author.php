@@ -49,7 +49,7 @@ $author_option = make_get_thememod_value( $author_key );
 	}
 	?>
 
-	<?php if ( is_singular() && $author_bio = get_the_author_meta( 'description' ) ) : ?>
+	<?php if ( 'before-content' !== $GLOBALS['make_current_location'] && is_singular() && $author_bio = get_the_author_meta( 'description' ) ) : ?>
 	<div class="entry-author-bio">
 		<?php echo wpautop( Make()->sanitize()->sanitize_text( $author_bio ) ); ?>
 	</div>
