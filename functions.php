@@ -190,6 +190,24 @@ add_filter( 'makeplus_postslist_output', function( $retval, $query, $display ) {
 }, 10, 3 );
 
 /**
+ * Filter Events Calendar's "No matching events" msg for empty 'workshop'
+ * event archives.
+ */
+add_filter( 'tribe_events_set_notice', function( $retval, $key ) {
+	if ( 'events-not-found' !== $key ) {
+		return $retval;
+	}
+
+	$tribe = Tribe__Events__Main::instance();
+	$maybe_term = get_query_var( 'term' );
+	if ( is_tax( $tribe->get_event_taxonomy() ) && ! empty( $maybe_term ) && 'workshop' === $maybe_term ) {
+		return 'GCDI has completed its workshop series at this time, check back for new workshops two weeks prior to the next semester.';
+	}
+
+	return $retval;
+}, 10, 2 );
+
+/**
  * Follow Us widget, piggybacks off Make's Social Links feature.
  *
  * @see WP_Widget
