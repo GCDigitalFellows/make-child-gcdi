@@ -8,4 +8,12 @@ jQuery(function($){
 
 	$('.header-bar-menu ul').slicknav({
 	});
+
+	$(window).scroll(function(){
+		if ($(window).scrollTop() > 46) {
+			$('body').addClass('sticky-move-to-top');
+		} else {
+			$('body').removeClass('sticky-move-to-top');
+		}
+	});
 });

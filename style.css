@@ -223,6 +223,16 @@ body .slicknav_menu .slicknav_icon-bar {
 	}
 }
 
+@media screen and (max-width: 600px) {
+	body.admin-bar.sticky-move-to-top #site-header {
+		top: 0 !important;
+	}
+
+	body.admin-bar.sticky-move-to-top .slicknav_menu {
+		top: 0;
+	}
+}
+
 /**
  * Landing Page
  */
