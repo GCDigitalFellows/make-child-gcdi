@@ -838,6 +838,13 @@ footer.entry-footer a,
 	background-color: #6b6d71;
 }
 
+/* Reposition Creative Commons license on single pages */
+.page .entry-meta-creative-commons {
+	margin:0 auto;
+	max-width: 1024px;
+	padding: 0 3.2rem;
+}
+
 /* FIXME: This is a workaround due to a WP core issue */
 
 body {
