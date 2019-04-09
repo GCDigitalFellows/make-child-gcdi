@@ -1,6 +1,14 @@
 jQuery(function($){
+	var topSpacing = 0;
+
+	if ( $('.sitewide-footer').length ) {
+		topSpacing = 45;
+	} else if ( $('#wpadminbar').length ) {
+		topSpacing = 32;
+	}
+
 	$('#site-header').sticky({
-		topSpacing: $('#wpadminbar').length ? 32 : 0, // Space between element and top of the viewport
+		topSpacing: topSpacing, // Space between element and top of the viewport
 		zIndex: 100, // z-index
 		//stopper: "#bar" // Id, class, or number value
 		stickyClass: 'fixed-header' // Class applied to element when it's stuck
