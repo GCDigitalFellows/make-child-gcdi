@@ -727,9 +727,9 @@ a:hover i.fa-cac-icon {
     padding-right: .5em;
 }
 
-.fa-cac {
-    height: 1em;
-    vertical-align: bottom;
+.builder-section-text i.fa-cac-icon {
+	background-image: url(/wp-content/themes/make-child-gcdi/images/social-cac-icon-blue.svg)
+	opacity: 1;
 }
 
 
