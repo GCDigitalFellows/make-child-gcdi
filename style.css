@@ -728,7 +728,7 @@ a:hover i.fa-cac-icon {
 }
 
 .builder-section-text i.fa-cac-icon {
-	background-image: url(/wp-content/themes/make-child-gcdi/images/social-cac-icon-blue.svg)
+	background-image: url(/wp-content/themes/make-child-gcdi/images/social-cac-icon-blue.svg);
 	opacity: 1;
 }
 
