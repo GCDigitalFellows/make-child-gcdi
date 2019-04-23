@@ -208,6 +208,61 @@ add_filter( 'tribe_events_set_notice', function( $retval, $key ) {
 }, 10, 2 );
 
 /**
+ * Add 'Full calendar view' link to events calendar.
+ */
+add_action( 'tribe_events_after_header', function() {
+	echo '<div style="text-align:center;">';
+
+	$show_full = true;
+	$link = '';
+
+	if ( get_query_var( 'term' ) ) {
+		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+			$link = '/events/';
+			if ( ! empty( $_POST['eventDate'] ) ) {
+				$link .= sanitize_title( $_POST['eventDate'] ) . '/';
+			}
+			if ( ! empty( $_POST['tribe-bar-date'] ) ) {
+				$link .= '?tribe-bar-date=' . sanitize_title( $_POST['tribe-bar-date'] );
+			}
+
+		} else {
+			$link = $_SERVER['REQUEST_URI'];
+
+			if ( false !== strpos( $link, '?' ) ) {
+				$link = preg_replace( '#/category/(.*)/?tribe_events_cat=(.*)&#', '/?', $link );
+			} else {
+				$link = preg_replace( '#/category/(.*)/#', '/', $link );
+			}
+
+			if ( empty( $GLOBALS['wp_query']->query['eventDate'] ) ) {
+				$show_full = false;
+			}
+		}
+
+		printf( '<a href="%s">Remove filter</a>', $link );
+
+		if ( '/events/' !== $link ) {
+			echo ' | ';
+		}
+	} else {
+		if ( ! defined( 'DOING_AJAX' ) && empty( $GLOBALS['wp_query']->query['eventDate'] ) ) {
+			$show_full = false;
+		}
+
+		if ( ! defined( 'DOING_AJAX' ) && 0 === strpos( $_SERVER['REQUEST_URI'], '/calendar' ) ) {
+			$show_full = false;
+		}
+	}
+
+	if ( $show_full ) {
+		echo '<a href="/events/">Full calendar view</a>';
+	}
+
+	echo '</div>';
+}, 999 );
+
+/**
  * Follow Us widget, piggybacks off Make's Social Links feature.
  *
  * @see WP_Widget
