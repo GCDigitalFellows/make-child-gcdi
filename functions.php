@@ -208,7 +208,7 @@ add_filter( 'tribe_events_set_notice', function( $retval, $key ) {
 }, 10, 2 );
 
 /**
- * Add 'Full calendar view' link to events calendar.
+ * Add 'Remove filter' link to events calendar.
  */
 add_action( 'tribe_events_after_header', function() {
 	echo '<div style="text-align:center;">';
@@ -241,22 +241,6 @@ add_action( 'tribe_events_after_header', function() {
 		}
 
 		printf( '<a href="%s">Remove filter</a>', $link );
-
-		if ( '/events/' !== $link ) {
-			echo ' | ';
-		}
-	} else {
-		if ( ! defined( 'DOING_AJAX' ) && empty( $GLOBALS['wp_query']->query['eventDate'] ) ) {
-			$show_full = false;
-		}
-
-		if ( ! defined( 'DOING_AJAX' ) && 0 === strpos( $_SERVER['REQUEST_URI'], '/calendar' ) ) {
-			$show_full = false;
-		}
-	}
-
-	if ( $show_full ) {
-		echo '<a href="/events/">Full calendar view</a>';
 	}
 
 	echo '</div>';
