@@ -696,12 +696,15 @@ a:hover i.fa-cac-icon {
 }
 
 .gcdi-profiles .builder-text-content h5 {
-    grid-column-start: 2;
-    grid-row-start: 2;
-    text-align: right;
-    font-weight: normal !important;
-    padding: 0 5px 0 5px;
-    margin-left: auto;
+	grid-column-start: 2;
+	grid-row-start: 2;
+	text-align: right;
+	font-size: 1.5rem;
+	font-weight: normal !important;
+	letter-spacing: .05rem;
+	padding: 0 5px 0 5px;
+	margin-left: auto;
+	text-transform: none;
 }
 
 .gcdi-profiles .builder-text-content ul {
@@ -730,6 +733,42 @@ a:hover i.fa-cac-icon {
 .builder-section-text i.fa-cac-icon {
 	background-image: url(/wp-content/themes/make-child-gcdi/images/social-cac-icon-blue.svg);
 	opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+	main i.fa-cac-icon {
+		width: 26px;
+		height: 26px;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.gcdi-profiles .builder-text-content {
+		border: 0;
+		display: inline;
+	}
+
+	h3.builder-text-section-title,
+	.builder-text-column {
+		margin-bottom: 2em;
+	}
+
+	h3.builder-text-section-title,
+	.gcdi-profiles .builder-text-content h4,
+	.gcdi-profiles .builder-text-content h5 {
+		text-align: center;
+	}
+
+	main img.size-thumbnail,
+	main img.alignnone {
+		display: block;
+		float: none;
+		margin: 0 auto;
+	}
+
+	.gcdi-profiles .builder-text-content ul {
+		justify-content: space-evenly;
+	}
 }
 
 
