@@ -247,6 +247,15 @@ add_action( 'tribe_events_after_header', function() {
 }, 999 );
 
 /**
+ * Adds the venue description to the end of a single event's Venue block.
+ *
+ * @see https://redmine.gc.cuny.edu/issues/12625
+ */
+add_action( 'tribe_events_single_meta_venue_section_end', function() {
+	printf( '<dd class="tribe-venue-description">%s</dd>', get_post_field( 'post_content', tribe_get_venue_id() ) );
+}, 0 );
+
+/**
  * Follow Us widget, piggybacks off Make's Social Links feature.
  *
  * @see WP_Widget
