@@ -24,7 +24,7 @@ function gcdi_enqueue_scripts() {
 	}
 
 	// Update this whenever we make an update to bust cache.
-	$css_version = '20200409';
+	$css_version = '20190423';
 	$js_version  = '20190408';
 
 	/* CSS ***************************************************/
